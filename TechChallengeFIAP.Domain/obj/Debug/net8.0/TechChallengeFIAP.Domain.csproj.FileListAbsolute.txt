@@ -1,0 +1,12 @@
+C:\Users\ricar\source\repos\TechChallengeFIAP\TechChallengeFIAP.Domain\bin\Debug\net8.0\TechChallengeFIAP.Domain.deps.json
+C:\Users\ricar\source\repos\TechChallengeFIAP\TechChallengeFIAP.Domain\bin\Debug\net8.0\TechChallengeFIAP.Domain.dll
+C:\Users\ricar\source\repos\TechChallengeFIAP\TechChallengeFIAP.Domain\bin\Debug\net8.0\TechChallengeFIAP.Domain.pdb
+C:\Users\ricar\source\repos\TechChallengeFIAP\TechChallengeFIAP.Domain\obj\Debug\net8.0\TechChallengeFIAP.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ricar\source\repos\TechChallengeFIAP\TechChallengeFIAP.Domain\obj\Debug\net8.0\TechChallengeFIAP.Domain.AssemblyInfoInputs.cache
+C:\Users\ricar\source\repos\TechChallengeFIAP\TechChallengeFIAP.Domain\obj\Debug\net8.0\TechChallengeFIAP.Domain.AssemblyInfo.cs
+C:\Users\ricar\source\repos\TechChallengeFIAP\TechChallengeFIAP.Domain\obj\Debug\net8.0\TechChallengeFIAP.Domain.csproj.CoreCompileInputs.cache
+C:\Users\ricar\source\repos\TechChallengeFIAP\TechChallengeFIAP.Domain\obj\Debug\net8.0\TechChallengeFIAP.Domain.dll
+C:\Users\ricar\source\repos\TechChallengeFIAP\TechChallengeFIAP.Domain\obj\Debug\net8.0\refint\TechChallengeFIAP.Domain.dll
+C:\Users\ricar\source\repos\TechChallengeFIAP\TechChallengeFIAP.Domain\obj\Debug\net8.0\TechChallengeFIAP.Domain.pdb
+C:\Users\ricar\source\repos\TechChallengeFIAP\TechChallengeFIAP.Domain\obj\Debug\net8.0\ref\TechChallengeFIAP.Domain.dll
+C:\Users\ricar\source\repos\TechChallengeFIAP\TechChallengeFIAP.Domain\obj\Debug\net8.0\TechChallengeFIAP.Domain.csproj.AssemblyReference.cache

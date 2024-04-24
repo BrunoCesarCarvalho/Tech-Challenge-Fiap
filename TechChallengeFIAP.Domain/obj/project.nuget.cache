@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ead8XV610OBev6Ftz0+CgL8vyOYjC/nXuh+O+3ns+bqUdZr8Z+ZO7xd9M5XCdD8LSQ6f0yE6NUWke2SSxv23vQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ricar\\source\\repos\\TechChallengeFIAP\\TechChallengeFIAP.Domain\\TechChallengeFIAP.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ricar\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.1\\microsoft.extensions.dependencyinjection.abstractions.8.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

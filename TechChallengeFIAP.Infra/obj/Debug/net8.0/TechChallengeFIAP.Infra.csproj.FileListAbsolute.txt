@@ -1,0 +1,15 @@
+C:\Users\ricar\source\repos\TechChallengeFIAP\TechChallengeFIAP.Infra\bin\Debug\net8.0\TechChallengeFIAP.Infra.deps.json
+C:\Users\ricar\source\repos\TechChallengeFIAP\TechChallengeFIAP.Infra\bin\Debug\net8.0\TechChallengeFIAP.Infra.dll
+C:\Users\ricar\source\repos\TechChallengeFIAP\TechChallengeFIAP.Infra\bin\Debug\net8.0\TechChallengeFIAP.Infra.pdb
+C:\Users\ricar\source\repos\TechChallengeFIAP\TechChallengeFIAP.Infra\bin\Debug\net8.0\TechChallengeFIAP.Domain.dll
+C:\Users\ricar\source\repos\TechChallengeFIAP\TechChallengeFIAP.Infra\bin\Debug\net8.0\TechChallengeFIAP.Domain.pdb
+C:\Users\ricar\source\repos\TechChallengeFIAP\TechChallengeFIAP.Infra\obj\Debug\net8.0\TechChallengeFIAP.Infra.csproj.AssemblyReference.cache
+C:\Users\ricar\source\repos\TechChallengeFIAP\TechChallengeFIAP.Infra\obj\Debug\net8.0\TechChallengeFIAP.Infra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ricar\source\repos\TechChallengeFIAP\TechChallengeFIAP.Infra\obj\Debug\net8.0\TechChallengeFIAP.Infra.AssemblyInfoInputs.cache
+C:\Users\ricar\source\repos\TechChallengeFIAP\TechChallengeFIAP.Infra\obj\Debug\net8.0\TechChallengeFIAP.Infra.AssemblyInfo.cs
+C:\Users\ricar\source\repos\TechChallengeFIAP\TechChallengeFIAP.Infra\obj\Debug\net8.0\TechChallengeFIAP.Infra.csproj.CoreCompileInputs.cache
+C:\Users\ricar\source\repos\TechChallengeFIAP\TechChallengeFIAP.Infra\obj\Debug\net8.0\TechChal.03AB34DE.Up2Date
+C:\Users\ricar\source\repos\TechChallengeFIAP\TechChallengeFIAP.Infra\obj\Debug\net8.0\TechChallengeFIAP.Infra.dll
+C:\Users\ricar\source\repos\TechChallengeFIAP\TechChallengeFIAP.Infra\obj\Debug\net8.0\refint\TechChallengeFIAP.Infra.dll
+C:\Users\ricar\source\repos\TechChallengeFIAP\TechChallengeFIAP.Infra\obj\Debug\net8.0\TechChallengeFIAP.Infra.pdb
+C:\Users\ricar\source\repos\TechChallengeFIAP\TechChallengeFIAP.Infra\obj\Debug\net8.0\ref\TechChallengeFIAP.Infra.dll
