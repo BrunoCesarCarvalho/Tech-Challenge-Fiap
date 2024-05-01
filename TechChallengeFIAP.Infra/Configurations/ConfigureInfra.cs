@@ -20,7 +20,9 @@ namespace TechChallengeFIAP.Infra.Configurations
         public static void ConfigurationInfra(this IServiceCollection serviceCollection, IConfiguration configuration)
         {
             serviceCollection.AddScoped<IProdutoRepository, ProdutoRepository>();
-
+            serviceCollection.AddScoped<IClienteRepository, ClienteRepository>();
+            serviceCollection.AddScoped<IPedidoRepository, PedidoRepository>();
+            serviceCollection.AddScoped<IPedidoProdutosRepository, PedidoProdutosRepository>();
 
             var conn = configuration.GetConnectionString("DataBase");
             serviceCollection.AddDbContext<DataBaseContext>(options => options.UseSqlServer(conn));

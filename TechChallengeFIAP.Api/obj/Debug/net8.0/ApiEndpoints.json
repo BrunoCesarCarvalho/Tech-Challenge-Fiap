@@ -1,5 +1,63 @@
 [
   {
+    "ContainingType": "TechChallengeFIAP.Api.Controllers.ClienteController",
+    "Method": "CreateAsync",
+    "RelativePath": "api/Cliente",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "clienteCadastroDTO",
+        "Type": "TechChallengeFIAP.Domain.DTOs.ClienteCadastroDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TechChallengeFIAP.Api.Controllers.ClienteController",
+    "Method": "GetByCpfAsync",
+    "RelativePath": "api/Cliente/cpf/{cpf}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cpf",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TechChallengeFIAP.Api.Controllers.PedidoController",
+    "Method": "CreateAsync",
+    "RelativePath": "api/Pedido",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createPedidoDTO",
+        "Type": "TechChallengeFIAP.Domain.DTOs.CreatePedidoDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TechChallengeFIAP.Api.Controllers.PedidoController",
+    "Method": "GetAll",
+    "RelativePath": "api/Pedido/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "TechChallengeFIAP.Api.Controllers.ProdutoController",
     "Method": "CreateAsync",
     "RelativePath": "api/Produto",
@@ -59,8 +117,8 @@
   },
   {
     "ContainingType": "TechChallengeFIAP.Api.Controllers.ProdutoController",
-    "Method": "GetByCategoriaId",
-    "RelativePath": "categoria",
+    "Method": "GetListByIdCategoryAsync",
+    "RelativePath": "ListByIdCategoryAsync/{categoryId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -68,29 +126,25 @@
       {
         "Name": "categoryId",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "TechChallengeFIAP.Api.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
+    "ContainingType": "TechChallengeFIAP.Api.Controllers.ProdutoController",
+    "Method": "GetListByNomeCategoryAsync",
+    "RelativePath": "ListByNomeCategoryAsync/{nome}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
+    "Parameters": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[TechChallengeFIAP.Api.WeatherForecast, TechChallengeFIAP.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
+        "Name": "nome",
+        "Type": "System.String",
+        "IsRequired": true
       }
-    ]
+    ],
+    "ReturnTypes": []
   }
 ]

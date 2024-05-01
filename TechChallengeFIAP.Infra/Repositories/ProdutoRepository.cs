@@ -154,9 +154,21 @@ namespace TechChallengeFIAP.Infra.Repositories
             }
         }
 
-        public async Task<List<ProdutoDTO>> GetListByCategoryAsync(int categoryId)
+        public async Task<List<ProdutoDTO>> GetListByIdCategoryAsync(int categoryId)
         {
             return await _dataBaseContext.Produto.Where(w => w.IdCategoriaProduto == categoryId).Select(x => new ProdutoDTO
+            {
+                Descricao = x.Descricao,
+                Id = x.Id,
+                IdCategoriaProduto = x.IdCategoriaProduto,
+                Nome = x.Nome,
+                Valor = x.Valor
+            }).ToListAsync();
+        }
+
+        public async Task<List<ProdutoDTO>> GetListByNomeCategoryAsync(string nome)
+        {
+            return await _dataBaseContext.Produto.Where(w => w.Categoria.Nome == nome).Select(x => new ProdutoDTO
             {
                 Descricao = x.Descricao,
                 Id = x.Id,
@@ -183,5 +195,7 @@ namespace TechChallengeFIAP.Infra.Repositories
             Dispose(true);
             GC.SuppressFinalize(this);
         }
+
+        
     }
 }

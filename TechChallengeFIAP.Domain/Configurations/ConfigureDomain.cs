@@ -14,6 +14,8 @@ namespace TechChallengeFIAP.Domain.Configurations
         public static void ConfigurationDomain(this IServiceCollection serviceCollection)
         {
             serviceCollection.AddScoped<IProdutoService, ProdutoService>();
+            serviceCollection.AddScoped<IClienteService, ClienteService>();
+            serviceCollection.AddScoped<IPedidoService, PedidoService>();
         }
     }
 }

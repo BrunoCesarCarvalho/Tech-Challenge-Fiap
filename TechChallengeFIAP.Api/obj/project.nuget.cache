@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "H1W35i1ATZPRNYf/myI0cAAChKq5Gq3rUl3Ng5pCsPF7Il2e3kwBC6gUPu3KpF7riCO9Uq0PNKA2egkZdRsc/g==",
+  "dgSpecHash": "fqAgE2jyGXj32IKaot4u4ar1N8e92Nda5rQq/qTUyhf+aO4d5UAtyTj/g7BMEbHUwtA/Ebc6MvaNrxQaNoeq+A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ricar\\source\\repos\\TechChallengeFIAP\\TechChallengeFIAP.Api\\TechChallengeFIAP.Api.csproj",
+  "projectFilePath": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Api\\TechChallengeFIAP.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ricar\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\ricar\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

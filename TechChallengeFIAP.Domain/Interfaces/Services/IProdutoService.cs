@@ -14,6 +14,7 @@ namespace TechChallengeFIAP.Domain.Interfaces.Services
         Task EditAsync(EditProdutoDTO editProdutoDTO);
         Task DeleteAsync(int id);
 
-        Task<List<ProdutoDTO>> GetListByCategoryAsync(int categoryId);
+        Task<List<ProdutoDTO>> GetListByIdCategoryAsync(int categoryId);
+        Task<List<ProdutoDTO>> GetListByNomeCategoryAsync(string nome);
     }
 }

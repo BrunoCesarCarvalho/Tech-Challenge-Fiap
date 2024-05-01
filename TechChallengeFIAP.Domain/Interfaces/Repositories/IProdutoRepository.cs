@@ -19,6 +19,8 @@ namespace TechChallengeFIAP.Domain.Interfaces.Repositories
 
         Task DeleteAsync(int Id);
 
-        Task<List<ProdutoDTO>> GetListByCategoryAsync(int categoryId);
+        Task<List<ProdutoDTO>> GetListByIdCategoryAsync(int categoryId);
+
+        Task<List<ProdutoDTO>> GetListByNomeCategoryAsync(string nome);
     }
 }

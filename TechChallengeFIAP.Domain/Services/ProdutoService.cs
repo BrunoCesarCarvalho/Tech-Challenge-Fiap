@@ -58,9 +58,14 @@ namespace TechChallengeFIAP.Domain.Services
             return await _produtoRepository.GetAll();
         }
 
-        public async Task<List<ProdutoDTO>> GetListByCategoryAsync(int categoryId)
+        public async Task<List<ProdutoDTO>> GetListByIdCategoryAsync(int categoryId)
         {
-            return await _produtoRepository.GetListByCategoryAsync(categoryId);
+            return await _produtoRepository.GetListByIdCategoryAsync(categoryId);
+        }
+
+        public async Task<List<ProdutoDTO>> GetListByNomeCategoryAsync(string nome)
+        {
+            return await _produtoRepository.GetListByNomeCategoryAsync(nome);
         }
     }
 }
