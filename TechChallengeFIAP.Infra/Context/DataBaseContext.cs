@@ -61,6 +61,11 @@ namespace TechChallengeFIAP.Infra.Context
                 .WithMany(p => p.PedidoProdutos)
                 .HasForeignKey(pp => pp.IdPedido);
 
+            modelBuilder.Entity<PedidoProdutosEntity>()
+                .HasOne(p => p.Produto)
+                .WithMany()
+                .HasForeignKey(p => p.IdProduto);
+
 
         }
     }

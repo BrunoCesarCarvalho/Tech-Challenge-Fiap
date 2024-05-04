@@ -11,5 +11,11 @@ namespace TechChallengeFIAP.Domain.Interfaces.Repositories
     {
         Task<List<PedidoDTO>> GetAllAsync();
         Task<int> CreatePedidoAsync(CreatePedidoOnlyDTO createPedidoOnlyDTO);
+        Task<List<PedidoMercadoPagoDTO>> GetPedidoMercadoPago(int IdPedido);
+        Task SaveQrDataAsync(string qrData, int idPedido);
+        Task<PedidoDTO> GetByIdAsync(int IdPedido);
+        Task ChangeStatusAsync(int idPedido, int idStatus);
+
+        Task ConfirmPaymentAsync(int idPedido);
     }
 }

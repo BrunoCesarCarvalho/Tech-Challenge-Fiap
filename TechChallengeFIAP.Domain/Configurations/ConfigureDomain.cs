@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using TechChallengeFiap.Integrations.MercadoPagoFIAP.Interfaces;
+using TechChallengeFiap.Integrations.MercadoPagoFIAP.Services;
 using TechChallengeFIAP.Domain.Interfaces.Services;
 using TechChallengeFIAP.Domain.Services;
 
@@ -16,6 +19,8 @@ namespace TechChallengeFIAP.Domain.Configurations
             serviceCollection.AddScoped<IProdutoService, ProdutoService>();
             serviceCollection.AddScoped<IClienteService, ClienteService>();
             serviceCollection.AddScoped<IPedidoService, PedidoService>();
+
+            serviceCollection.AddScoped<IMercadoPagoService, MercadoPagoService>();
         }
     }
 }

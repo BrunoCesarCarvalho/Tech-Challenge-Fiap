@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechChallengeFIAP.Infra", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallengeFiap.Integrations", "TechChallengeFiap.Integrations\TechChallengeFiap.Integrations.csproj", "{EE0B7941-BDD2-492E-A09A-81E6FBF4B853}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{01852D92-33DD-45BD-AC7C-E73672687558}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{EE0B7941-BDD2-492E-A09A-81E6FBF4B853}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE0B7941-BDD2-492E-A09A-81E6FBF4B853}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE0B7941-BDD2-492E-A09A-81E6FBF4B853}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01852D92-33DD-45BD-AC7C-E73672687558}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01852D92-33DD-45BD-AC7C-E73672687558}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01852D92-33DD-45BD-AC7C-E73672687558}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01852D92-33DD-45BD-AC7C-E73672687558}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +50,7 @@ Global
 		{1E34BE6C-D93E-477C-9C83-252A4382DBB9} = {D198AC38-3F2E-436E-BBD4-0D8ECC2521D1}
 		{BD77A516-5C12-4521-BD2C-C4C35190C574} = {D198AC38-3F2E-436E-BBD4-0D8ECC2521D1}
 		{EE0B7941-BDD2-492E-A09A-81E6FBF4B853} = {D198AC38-3F2E-436E-BBD4-0D8ECC2521D1}
+		{01852D92-33DD-45BD-AC7C-E73672687558} = {D198AC38-3F2E-436E-BBD4-0D8ECC2521D1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AB53B60E-AA27-47A6-8224-EF73D7771C68}

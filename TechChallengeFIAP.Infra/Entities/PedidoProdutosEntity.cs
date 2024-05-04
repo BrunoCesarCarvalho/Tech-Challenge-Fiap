@@ -16,5 +16,6 @@ namespace TechChallengeFIAP.Infra.Entities
         public int Quantidade { get; set;}
 
         public PedidoEntity Pedido { get; set;}
+        public ProdutoEntity Produto { get; set;}
     }
 }

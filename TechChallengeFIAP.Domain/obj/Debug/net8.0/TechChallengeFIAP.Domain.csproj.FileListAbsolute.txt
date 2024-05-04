@@ -10,16 +10,3 @@ C:\Users\ricar\source\repos\TechChallengeFIAP\TechChallengeFIAP.Domain\obj\Debug
 C:\Users\ricar\source\repos\TechChallengeFIAP\TechChallengeFIAP.Domain\obj\Debug\net8.0\TechChallengeFIAP.Domain.pdb
 C:\Users\ricar\source\repos\TechChallengeFIAP\TechChallengeFIAP.Domain\obj\Debug\net8.0\ref\TechChallengeFIAP.Domain.dll
 C:\Users\ricar\source\repos\TechChallengeFIAP\TechChallengeFIAP.Domain\obj\Debug\net8.0\TechChallengeFIAP.Domain.csproj.AssemblyReference.cache
-C:\_GTI_FIAP\Tech-Challenge-Fiap\TechChallengeFIAP.Domain\bin\Debug\net8.0\TechChallengeFIAP.Domain.deps.json
-C:\_GTI_FIAP\Tech-Challenge-Fiap\TechChallengeFIAP.Domain\bin\Debug\net8.0\TechChallengeFIAP.Domain.dll
-C:\_GTI_FIAP\Tech-Challenge-Fiap\TechChallengeFIAP.Domain\bin\Debug\net8.0\TechChallengeFIAP.Domain.pdb
-C:\_GTI_FIAP\Tech-Challenge-Fiap\TechChallengeFIAP.Domain\obj\Debug\net8.0\TechChallengeFIAP.Domain.csproj.AssemblyReference.cache
-C:\_GTI_FIAP\Tech-Challenge-Fiap\TechChallengeFIAP.Domain\obj\Debug\net8.0\TechChallengeFIAP.Domain.GeneratedMSBuildEditorConfig.editorconfig
-C:\_GTI_FIAP\Tech-Challenge-Fiap\TechChallengeFIAP.Domain\obj\Debug\net8.0\TechChallengeFIAP.Domain.AssemblyInfoInputs.cache
-C:\_GTI_FIAP\Tech-Challenge-Fiap\TechChallengeFIAP.Domain\obj\Debug\net8.0\TechChallengeFIAP.Domain.AssemblyInfo.cs
-C:\_GTI_FIAP\Tech-Challenge-Fiap\TechChallengeFIAP.Domain\obj\Debug\net8.0\TechChallengeFIAP.Domain.csproj.CoreCompileInputs.cache
-C:\_GTI_FIAP\Tech-Challenge-Fiap\TechChallengeFIAP.Domain\obj\Debug\net8.0\TechChallengeFIAP.Domain.sourcelink.json
-C:\_GTI_FIAP\Tech-Challenge-Fiap\TechChallengeFIAP.Domain\obj\Debug\net8.0\TechChallengeFIAP.Domain.dll
-C:\_GTI_FIAP\Tech-Challenge-Fiap\TechChallengeFIAP.Domain\obj\Debug\net8.0\refint\TechChallengeFIAP.Domain.dll
-C:\_GTI_FIAP\Tech-Challenge-Fiap\TechChallengeFIAP.Domain\obj\Debug\net8.0\TechChallengeFIAP.Domain.pdb
-C:\_GTI_FIAP\Tech-Challenge-Fiap\TechChallengeFIAP.Domain\obj\Debug\net8.0\ref\TechChallengeFIAP.Domain.dll

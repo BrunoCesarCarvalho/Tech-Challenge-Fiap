@@ -58,6 +58,64 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "TechChallengeFIAP.Api.Controllers.PedidoController",
+    "Method": "ChangeStatusAsync",
+    "RelativePath": "api/Pedido/alterar-status/{id}/{idStatus}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "idStatus",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "idStatus",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TechChallengeFIAP.Api.Controllers.PedidoController",
+    "Method": "ConfirmePaymentAsync",
+    "RelativePath": "api/Pedido/confirm-payment/{Id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TechChallengeFIAP.Api.Controllers.PedidoController",
+    "Method": "GetQrCodeAsync",
+    "RelativePath": "api/Pedido/qr-code/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "TechChallengeFIAP.Api.Controllers.ProdutoController",
     "Method": "CreateAsync",
     "RelativePath": "api/Produto",

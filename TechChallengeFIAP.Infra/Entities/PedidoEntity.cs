@@ -16,6 +16,7 @@ namespace TechChallengeFIAP.Infra.Entities
         public int IdStatusEtapa {  get; set; }
         public int IdStatusPagamento { get; set; }
         public decimal ValorTotal {  get; set; }
+        public string QrData { get; set; }
 
         public ClienteEntity Cliente { get; set; }
         public PedidoStatusEtapaEntity StatusEtapa { get; set; }
