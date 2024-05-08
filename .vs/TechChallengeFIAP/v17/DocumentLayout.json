@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2E3D2E2-9A21-4838-8F7A-580C496635B1}|docker-compose.dcproj|c:\\_gti_fiap\\tech-challenge-fiap\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2E3D2E2-9A21-4838-8F7A-580C496635B1}|docker-compose.dcproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2E3D2E2-9A21-4838-8F7A-580C496635B1}|docker-compose.dcproj|c:\\_gti_fiap\\tech-challenge-fiap\\docker-compose.override.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2E3D2E2-9A21-4838-8F7A-580C496635B1}|docker-compose.dcproj|solutionrelative:docker-compose.override.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C89C9BB6-15CD-44E0-8DD2-C66869D084B6}|TechChallengeFIAP.Api\\TechChallengeFIAP.Api.csproj|c:\\_gti_fiap\\tech-challenge-fiap\\techchallengefiap.api\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{C89C9BB6-15CD-44E0-8DD2-C66869D084B6}|TechChallengeFIAP.Api\\TechChallengeFIAP.Api.csproj|solutionrelative:techchallengefiap.api\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C89C9BB6-15CD-44E0-8DD2-C66869D084B6}|TechChallengeFIAP.Api\\TechChallengeFIAP.Api.csproj|c:\\_gti_fiap\\tech-challenge-fiap\\techchallengefiap.api\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C89C9BB6-15CD-44E0-8DD2-C66869D084B6}|TechChallengeFIAP.Api\\TechChallengeFIAP.Api.csproj|solutionrelative:techchallengefiap.api\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E34BE6C-D93E-477C-9C83-252A4382DBB9}|TechChallengeFIAP.Domain\\TechChallengeFIAP.Domain.csproj|c:\\_gti_fiap\\tech-challenge-fiap\\techchallengefiap.domain\\services\\pedidoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1E34BE6C-D93E-477C-9C83-252A4382DBB9}|TechChallengeFIAP.Domain\\TechChallengeFIAP.Domain.csproj|solutionrelative:techchallengefiap.domain\\services\\pedidoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD77A516-5C12-4521-BD2C-C4C35190C574}|TechChallengeFIAP.Infra\\TechChallengeFIAP.Infra.csproj|c:\\_gti_fiap\\tech-challenge-fiap\\techchallengefiap.infra\\repositories\\pedidorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD77A516-5C12-4521-BD2C-C4C35190C574}|TechChallengeFIAP.Infra\\TechChallengeFIAP.Infra.csproj|solutionrelative:techchallengefiap.infra\\repositories\\pedidorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1E34BE6C-D93E-477C-9C83-252A4382DBB9}|TechChallengeFIAP.Domain\\TechChallengeFIAP.Domain.csproj|c:\\_gti_fiap\\tech-challenge-fiap\\techchallengefiap.domain\\interfaces\\repositories\\ipedidorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1E34BE6C-D93E-477C-9C83-252A4382DBB9}|TechChallengeFIAP.Domain\\TechChallengeFIAP.Domain.csproj|solutionrelative:techchallengefiap.domain\\interfaces\\repositories\\ipedidorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1E34BE6C-D93E-477C-9C83-252A4382DBB9}|TechChallengeFIAP.Domain\\TechChallengeFIAP.Domain.csproj|c:\\_gti_fiap\\tech-challenge-fiap\\techchallengefiap.domain\\interfaces\\services\\ipedidoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1E34BE6C-D93E-477C-9C83-252A4382DBB9}|TechChallengeFIAP.Domain\\TechChallengeFIAP.Domain.csproj|solutionrelative:techchallengefiap.domain\\interfaces\\services\\ipedidoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C89C9BB6-15CD-44E0-8DD2-C66869D084B6}|TechChallengeFIAP.Api\\TechChallengeFIAP.Api.csproj|c:\\_gti_fiap\\tech-challenge-fiap\\techchallengefiap.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C89C9BB6-15CD-44E0-8DD2-C66869D084B6}|TechChallengeFIAP.Api\\TechChallengeFIAP.Api.csproj|solutionrelative:techchallengefiap.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,67 +38,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IPedidoService.cs",
-              "DocumentMoniker": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Domain\\Interfaces\\Services\\IPedidoService.cs",
-              "RelativeDocumentMoniker": "TechChallengeFIAP.Domain\\Interfaces\\Services\\IPedidoService.cs",
-              "ToolTip": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Domain\\Interfaces\\Services\\IPedidoService.cs",
-              "RelativeToolTip": "TechChallengeFIAP.Domain\\Interfaces\\Services\\IPedidoService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBEAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T18:41:42.108Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PedidoService.cs",
-              "DocumentMoniker": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Domain\\Services\\PedidoService.cs",
-              "RelativeDocumentMoniker": "TechChallengeFIAP.Domain\\Services\\PedidoService.cs",
-              "ToolTip": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Domain\\Services\\PedidoService.cs",
-              "RelativeToolTip": "TechChallengeFIAP.Domain\\Services\\PedidoService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAJIAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T18:41:39.199Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "IPedidoRepository.cs",
-              "DocumentMoniker": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Domain\\Interfaces\\Repositories\\IPedidoRepository.cs",
-              "RelativeDocumentMoniker": "TechChallengeFIAP.Domain\\Interfaces\\Repositories\\IPedidoRepository.cs",
-              "ToolTip": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Domain\\Interfaces\\Repositories\\IPedidoRepository.cs",
-              "RelativeToolTip": "TechChallengeFIAP.Domain\\Interfaces\\Repositories\\IPedidoRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T18:38:24.269Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PedidoRepository.cs",
-              "DocumentMoniker": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Infra\\Repositories\\PedidoRepository.cs",
-              "RelativeDocumentMoniker": "TechChallengeFIAP.Infra\\Repositories\\PedidoRepository.cs",
-              "ToolTip": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Infra\\Repositories\\PedidoRepository.cs",
-              "RelativeToolTip": "TechChallengeFIAP.Infra\\Repositories\\PedidoRepository.cs",
-              "ViewState": "AQIAAHsAAAAAAAAAAADwv5wAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T18:37:23.655Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "PedidoController.cs",
               "DocumentMoniker": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Api\\Controllers\\PedidoController.cs",
               "RelativeDocumentMoniker": "TechChallengeFIAP.Api\\Controllers\\PedidoController.cs",
               "ToolTip": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Api\\Controllers\\PedidoController.cs",
               "RelativeToolTip": "TechChallengeFIAP.Api\\Controllers\\PedidoController.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAowCcAAAAYAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAoAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T18:31:01.703Z",
+              "WhenOpened": "2024-05-07T23:50:00.25Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "docker-compose.override.yml",
+              "DocumentMoniker": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\docker-compose.override.yml",
+              "RelativeDocumentMoniker": "docker-compose.override.yml",
+              "ToolTip": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\docker-compose.override.yml",
+              "RelativeToolTip": "docker-compose.override.yml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2024-05-08T00:07:56.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Api\\Dockerfile",
+              "RelativeDocumentMoniker": "TechChallengeFIAP.Api\\Dockerfile",
+              "ToolTip": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Api\\Dockerfile",
+              "RelativeToolTip": "TechChallengeFIAP.Api\\Dockerfile",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-05-08T00:03:13.047Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Api\\Program.cs",
+              "RelativeDocumentMoniker": "TechChallengeFIAP.Api\\Program.cs",
+              "ToolTip": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Api\\Program.cs",
+              "RelativeToolTip": "TechChallengeFIAP.Api\\Program.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAAACsAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T23:54:09.824Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2024-05-07T23:48:06.923Z",
               "EditorCaption": ""
             }
           ]

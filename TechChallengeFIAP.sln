@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34607.79
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D198AC38-3F2E-436E-BBD4-0D8ECC2521D1}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechChallengeFIAP.Api", "TechChallengeFIAP.Api\TechChallengeFIAP.Api.csproj", "{C89C9BB6-15CD-44E0-8DD2-C66869D084B6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechChallengeFIAP.Domain", "TechChallengeFIAP.Domain\TechChallengeFIAP.Domain.csproj", "{1E34BE6C-D93E-477C-9C83-252A4382DBB9}"
@@ -14,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallengeFiap.Integrations", "TechChallengeFiap.Integrations\TechChallengeFiap.Integrations.csproj", "{EE0B7941-BDD2-492E-A09A-81E6FBF4B853}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{01852D92-33DD-45BD-AC7C-E73672687558}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A2E3D2E2-9A21-4838-8F7A-580C496635B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,16 +41,13 @@ Global
 		{01852D92-33DD-45BD-AC7C-E73672687558}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01852D92-33DD-45BD-AC7C-E73672687558}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01852D92-33DD-45BD-AC7C-E73672687558}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2E3D2E2-9A21-4838-8F7A-580C496635B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2E3D2E2-9A21-4838-8F7A-580C496635B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2E3D2E2-9A21-4838-8F7A-580C496635B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2E3D2E2-9A21-4838-8F7A-580C496635B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{C89C9BB6-15CD-44E0-8DD2-C66869D084B6} = {D198AC38-3F2E-436E-BBD4-0D8ECC2521D1}
-		{1E34BE6C-D93E-477C-9C83-252A4382DBB9} = {D198AC38-3F2E-436E-BBD4-0D8ECC2521D1}
-		{BD77A516-5C12-4521-BD2C-C4C35190C574} = {D198AC38-3F2E-436E-BBD4-0D8ECC2521D1}
-		{EE0B7941-BDD2-492E-A09A-81E6FBF4B853} = {D198AC38-3F2E-436E-BBD4-0D8ECC2521D1}
-		{01852D92-33DD-45BD-AC7C-E73672687558} = {D198AC38-3F2E-436E-BBD4-0D8ECC2521D1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AB53B60E-AA27-47A6-8224-EF73D7771C68}

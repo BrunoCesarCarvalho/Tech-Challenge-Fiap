@@ -3,13 +3,14 @@
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 USER app
 WORKDIR /app
-EXPOSE 8080
-EXPOSE 8081
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["TechChallengeFIAP.Api/TechChallengeFIAP.Api.csproj", "TechChallengeFIAP.Api/"]
+COPY ["TechChallengeFIAP.Domain/TechChallengeFIAP.Domain.csproj", "TechChallengeFIAP.Domain/"]
+COPY ["TechChallengeFiap.Integrations/TechChallengeFiap.Integrations.csproj", "TechChallengeFiap.Integrations/"]
+COPY ["TechChallengeFIAP.Infra/TechChallengeFIAP.Infra.csproj", "TechChallengeFIAP.Infra/"]
 RUN dotnet restore "./TechChallengeFIAP.Api/TechChallengeFIAP.Api.csproj"
 COPY . .
 WORKDIR "/src/TechChallengeFIAP.Api"

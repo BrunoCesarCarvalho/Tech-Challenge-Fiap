@@ -35,6 +35,7 @@ namespace TechChallengeFIAP.Infra.Repositories
                 Id = x.Id,
                 Data = x.Data,
                 ValorTotal = x.ValorTotal,
+                QrData = x.QrData,
                 Cliente = new ClienteDTO()
                 {
                     Id = x.Cliente.Id,

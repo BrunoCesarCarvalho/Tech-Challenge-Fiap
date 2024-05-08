@@ -60,7 +60,7 @@
   {
     "ContainingType": "TechChallengeFIAP.Api.Controllers.PedidoController",
     "Method": "ChangeStatusAsync",
-    "RelativePath": "api/Pedido/alterar-status/{id}/{idStatus}",
+    "RelativePath": "api/Pedido/change-status/{id}/{idStatus}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
