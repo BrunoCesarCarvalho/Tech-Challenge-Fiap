@@ -43,6 +43,7 @@ namespace TechChallengeFIAP.Api.Controllers
             await _pedidoService.ChangeStatusAsync(id, idStatus);
             return StatusCode(StatusCodes.Status204NoContent);
         }
+
         [HttpPut("confirm-payment/{Id}")]
         public async Task<IActionResult> ConfirmePaymentAsync([FromRoute] int Id)
         {
