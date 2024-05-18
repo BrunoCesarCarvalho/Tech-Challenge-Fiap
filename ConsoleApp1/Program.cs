@@ -1,7 +1,4 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using MercadoPago.Client.Payment;
-using MercadoPago.Config;
-using MercadoPago.Resource.Payment;
 using Newtonsoft.Json;
 using System.Text;
 using TechChallengeFiap.Integrations.MercadoPagoFIAP.Models;

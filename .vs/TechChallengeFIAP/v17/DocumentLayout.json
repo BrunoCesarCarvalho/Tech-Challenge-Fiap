@@ -3,28 +3,24 @@
   "WorkspaceRootPath": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C89C9BB6-15CD-44E0-8DD2-C66869D084B6}|TechChallengeFIAP.Api\\TechChallengeFIAP.Api.csproj|c:\\_gti_fiap\\tech-challenge-fiap\\techchallengefiap.api\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C89C9BB6-15CD-44E0-8DD2-C66869D084B6}|TechChallengeFIAP.Api\\TechChallengeFIAP.Api.csproj|solutionrelative:techchallengefiap.api\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C89C9BB6-15CD-44E0-8DD2-C66869D084B6}|TechChallengeFIAP.Api\\TechChallengeFIAP.Api.csproj|c:\\_gti_fiap\\tech-challenge-fiap\\techchallengefiap.api\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C89C9BB6-15CD-44E0-8DD2-C66869D084B6}|TechChallengeFIAP.Api\\TechChallengeFIAP.Api.csproj|solutionrelative:techchallengefiap.api\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{BD77A516-5C12-4521-BD2C-C4C35190C574}|TechChallengeFIAP.Infra\\TechChallengeFIAP.Infra.csproj|c:\\_gti_fiap\\tech-challenge-fiap\\techchallengefiap.infra\\repositories\\clienterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD77A516-5C12-4521-BD2C-C4C35190C574}|TechChallengeFIAP.Infra\\TechChallengeFIAP.Infra.csproj|solutionrelative:techchallengefiap.infra\\repositories\\clienterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E34BE6C-D93E-477C-9C83-252A4382DBB9}|TechChallengeFIAP.Domain\\TechChallengeFIAP.Domain.csproj|c:\\_gti_fiap\\tech-challenge-fiap\\techchallengefiap.domain\\services\\clienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E34BE6C-D93E-477C-9C83-252A4382DBB9}|TechChallengeFIAP.Domain\\TechChallengeFIAP.Domain.csproj|solutionrelative:techchallengefiap.domain\\services\\clienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C89C9BB6-15CD-44E0-8DD2-C66869D084B6}|TechChallengeFIAP.Api\\TechChallengeFIAP.Api.csproj|c:\\_gti_fiap\\tech-challenge-fiap\\techchallengefiap.api\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C89C9BB6-15CD-44E0-8DD2-C66869D084B6}|TechChallengeFIAP.Api\\TechChallengeFIAP.Api.csproj|solutionrelative:techchallengefiap.api\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C89C9BB6-15CD-44E0-8DD2-C66869D084B6}|TechChallengeFIAP.Api\\TechChallengeFIAP.Api.csproj|c:\\_gti_fiap\\tech-challenge-fiap\\techchallengefiap.api\\controllers\\produtocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C89C9BB6-15CD-44E0-8DD2-C66869D084B6}|TechChallengeFIAP.Api\\TechChallengeFIAP.Api.csproj|solutionrelative:techchallengefiap.api\\controllers\\produtocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD77A516-5C12-4521-BD2C-C4C35190C574}|TechChallengeFIAP.Infra\\TechChallengeFIAP.Infra.csproj|c:\\_gti_fiap\\tech-challenge-fiap\\techchallengefiap.infra\\repositories\\pedidorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD77A516-5C12-4521-BD2C-C4C35190C574}|TechChallengeFIAP.Infra\\TechChallengeFIAP.Infra.csproj|solutionrelative:techchallengefiap.infra\\repositories\\pedidorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1E34BE6C-D93E-477C-9C83-252A4382DBB9}|TechChallengeFIAP.Domain\\TechChallengeFIAP.Domain.csproj|c:\\_gti_fiap\\tech-challenge-fiap\\techchallengefiap.domain\\services\\pedidoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1E34BE6C-D93E-477C-9C83-252A4382DBB9}|TechChallengeFIAP.Domain\\TechChallengeFIAP.Domain.csproj|solutionrelative:techchallengefiap.domain\\services\\pedidoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C89C9BB6-15CD-44E0-8DD2-C66869D084B6}|TechChallengeFIAP.Api\\TechChallengeFIAP.Api.csproj|c:\\_gti_fiap\\tech-challenge-fiap\\techchallengefiap.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{C89C9BB6-15CD-44E0-8DD2-C66869D084B6}|TechChallengeFIAP.Api\\TechChallengeFIAP.Api.csproj|solutionrelative:techchallengefiap.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -37,17 +33,8 @@
           "SelectedChildIndex": 3,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PedidoRepository.cs",
-              "DocumentMoniker": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Infra\\Repositories\\PedidoRepository.cs",
-              "RelativeDocumentMoniker": "TechChallengeFIAP.Infra\\Repositories\\PedidoRepository.cs",
-              "ToolTip": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Infra\\Repositories\\PedidoRepository.cs",
-              "RelativeToolTip": "TechChallengeFIAP.Infra\\Repositories\\PedidoRepository.cs",
-              "ViewState": "AQIAAHwAAAAAAAAAAAAewJsAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-15T21:43:41.176Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Bookmark",
@@ -56,66 +43,66 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ProdutoController.cs",
-              "DocumentMoniker": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Api\\Controllers\\ProdutoController.cs",
-              "RelativeDocumentMoniker": "TechChallengeFIAP.Api\\Controllers\\ProdutoController.cs",
-              "ToolTip": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Api\\Controllers\\ProdutoController.cs",
-              "RelativeToolTip": "TechChallengeFIAP.Api\\Controllers\\ProdutoController.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAUwAAAAAAAAAAA",
+              "Title": "ClienteService.cs",
+              "DocumentMoniker": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Domain\\Services\\ClienteService.cs",
+              "RelativeDocumentMoniker": "TechChallengeFIAP.Domain\\Services\\ClienteService.cs",
+              "ToolTip": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Domain\\Services\\ClienteService.cs",
+              "RelativeToolTip": "TechChallengeFIAP.Domain\\Services\\ClienteService.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwCIAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-15T00:08:06.76Z",
+              "WhenOpened": "2024-05-18T16:19:33.791Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PedidoController.cs",
-              "DocumentMoniker": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Api\\Controllers\\PedidoController.cs",
-              "RelativeDocumentMoniker": "TechChallengeFIAP.Api\\Controllers\\PedidoController.cs",
-              "ToolTip": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Api\\Controllers\\PedidoController.cs",
-              "RelativeToolTip": "TechChallengeFIAP.Api\\Controllers\\PedidoController.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABMAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-15T00:08:06.839Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "ClienteController.cs",
               "DocumentMoniker": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Api\\Controllers\\ClienteController.cs",
               "RelativeDocumentMoniker": "TechChallengeFIAP.Api\\Controllers\\ClienteController.cs",
               "ToolTip": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Api\\Controllers\\ClienteController.cs",
               "RelativeToolTip": "TechChallengeFIAP.Api\\Controllers\\ClienteController.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAQwA8AAABAAAAA",
+              "ViewState": "AQIAABMAAAAAAAAAAAAgwCQAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-15T00:08:06.855Z",
+              "WhenOpened": "2024-05-18T16:19:19.557Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "PedidoService.cs",
-              "DocumentMoniker": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Domain\\Services\\PedidoService.cs",
-              "RelativeDocumentMoniker": "TechChallengeFIAP.Domain\\Services\\PedidoService.cs",
-              "ToolTip": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Domain\\Services\\PedidoService.cs",
-              "RelativeToolTip": "TechChallengeFIAP.Domain\\Services\\PedidoService.cs",
-              "ViewState": "AQIAAIUAAAAAAAAAAIAwwJ4AAAAxAAAA",
+              "Title": "ProdutoController.cs",
+              "DocumentMoniker": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Api\\Controllers\\ProdutoController.cs",
+              "RelativeDocumentMoniker": "TechChallengeFIAP.Api\\Controllers\\ProdutoController.cs",
+              "ToolTip": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Api\\Controllers\\ProdutoController.cs",
+              "RelativeToolTip": "TechChallengeFIAP.Api\\Controllers\\ProdutoController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-15T00:08:06.92Z",
+              "WhenOpened": "2024-05-18T16:19:18.896Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Api\\appsettings.json",
-              "RelativeDocumentMoniker": "TechChallengeFIAP.Api\\appsettings.json",
-              "ToolTip": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Api\\appsettings.json",
-              "RelativeToolTip": "TechChallengeFIAP.Api\\appsettings.json",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABIAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-05-14T01:13:35.475Z",
+              "DocumentIndex": 3,
+              "Title": "PedidoController.cs",
+              "DocumentMoniker": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Api\\Controllers\\PedidoController.cs",
+              "RelativeDocumentMoniker": "TechChallengeFIAP.Api\\Controllers\\PedidoController.cs",
+              "ToolTip": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Api\\Controllers\\PedidoController.cs",
+              "RelativeToolTip": "TechChallengeFIAP.Api\\Controllers\\PedidoController.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAAB0AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T16:19:18.243Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ClienteRepository.cs",
+              "DocumentMoniker": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Infra\\Repositories\\ClienteRepository.cs",
+              "RelativeDocumentMoniker": "TechChallengeFIAP.Infra\\Repositories\\ClienteRepository.cs",
+              "ToolTip": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Infra\\Repositories\\ClienteRepository.cs",
+              "RelativeToolTip": "TechChallengeFIAP.Infra\\Repositories\\ClienteRepository.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAADYAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T15:56:37.502Z",
               "EditorCaption": ""
             }
           ]

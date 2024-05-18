@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Tech_Challenge_Fiap.Core.Paginetes;
+using Tech_Challenge_Fiap.Core.Responses;
 using TechChallengeFIAP.Domain.DTOs;
 
 namespace TechChallengeFIAP.Domain.Interfaces.Repositories
 {
     public interface IPedidoRepository
     {
-        Task<List<PedidoDTO>> GetAllAsync();
+        Task<PagedResponse<List<PedidoDTO>>> GetAllAsync(PaginationFilter filter);
         Task<int> CreatePedidoAsync(CreatePedidoOnlyDTO createPedidoOnlyDTO);
         Task<List<PedidoMercadoPagoDTO>> GetPedidoMercadoPago(int IdPedido);
         Task SaveQrDataAsync(string qrData, int idPedido);

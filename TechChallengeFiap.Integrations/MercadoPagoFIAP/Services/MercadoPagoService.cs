@@ -1,18 +1,8 @@
-﻿using MercadoPago.Client.Payment;
-using MercadoPago.Config;
-using MercadoPago.Resource.Payment;
-using Microsoft.Extensions.Configuration;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
+﻿using Newtonsoft.Json;
 using System.Text;
-using System.Threading.Tasks;
 using TechChallengeFiap.Integrations.MercadoPagoFIAP.Abstracts;
 using TechChallengeFiap.Integrations.MercadoPagoFIAP.Interfaces;
 using TechChallengeFiap.Integrations.MercadoPagoFIAP.Models;
-using MercardoPagoSDK = MercadoPago;
 
 
 

@@ -1,11 +1,7 @@
 ﻿using QRCoder;
-using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Transactions;
+using Tech_Challenge_Fiap.Core.Paginetes;
+using Tech_Challenge_Fiap.Core.Responses;
 using TechChallengeFiap.Integrations.MercadoPagoFIAP.Interfaces;
 using TechChallengeFiap.Integrations.MercadoPagoFIAP.Models;
 using TechChallengeFIAP.Domain.DTOs;
@@ -20,7 +16,6 @@ namespace TechChallengeFIAP.Domain.Services
     {
 
         private readonly IMercadoPagoService _mercadoPagoService;
-
         private readonly IPedidoRepository _pedidoRepository;
         private readonly IProdutoRepository _produtoRepository;
         private readonly IPedidoProdutosRepository _pedidoProdutosRepository;
@@ -35,15 +30,25 @@ namespace TechChallengeFIAP.Domain.Services
             _mercadoPagoService = mercadoPagoService;
         }
 
-        public async Task<List<PedidoDTO>> GetAllAsync()
+        public async Task<PagedResponse<List<PedidoDTO>>> GetAllAsync(PaginationFilter filter)
         {
-            return await _pedidoRepository.GetAllAsync();
+            return await _pedidoRepository.GetAllAsync(filter);
         }
 
         public async Task<int> CreatePedidoAsync(CreatePedidoDTO createPedidoDTO)
         {
+            int idClienteAvulso = 0;
+            var clienteDTO = await _clienteRepository.GetByCpfAsync(createPedidoDTO?.Cliente?.Cpf);
 
-            var clienteDTO = await _clienteRepository.GetByCpfAsync(createPedidoDTO.Cliente.Cpf);
+            if (clienteDTO is null)
+            {
+                idClienteAvulso = await _clienteRepository.CreateAsync(new ClienteCadastroDTO()
+                {
+                    Cpf = null,
+                    Email = null,
+                    DataNascimento = "1900-01-01"
+                });
+            }
 
             var createPedidoOnlyDTO = new CreatePedidoOnlyDTO();
             decimal totalAmount = 0;
@@ -55,7 +60,7 @@ namespace TechChallengeFIAP.Domain.Services
             }
 
             createPedidoOnlyDTO.ValorTotal = totalAmount;
-            createPedidoOnlyDTO.IdCliente = clienteDTO.Id;
+            createPedidoOnlyDTO.IdCliente = idClienteAvulso > 0 ? idClienteAvulso : clienteDTO.Id;
             createPedidoOnlyDTO.IdStatusEtapa = (int)EnumPedidoStatusEtapa.Recebido;
             createPedidoOnlyDTO.IdStatusPagamento = (int)EnumStatusPagamento.Pendente;
 

@@ -1,13 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TechChallengeFIAP.Domain.DTOs;
 using TechChallengeFIAP.Domain.Interfaces.Repositories;
 using TechChallengeFIAP.Infra.Context;
 using TechChallengeFIAP.Infra.Entities;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace TechChallengeFIAP.Infra.Repositories
 {
@@ -34,19 +30,53 @@ namespace TechChallengeFIAP.Infra.Repositories
             } : null;
         }
 
-        public async Task CreateAsync(ClienteCadastroDTO clienteCadastroDTO)
+        public async Task<List<ClienteDTO>?> GetByPromotionsAsync(string cpf, string dtNascIni, string dtNascFin)
+        {
+            var query = _dataBaseContext.Cliente.AsQueryable();
+
+            if (!string.IsNullOrEmpty(cpf))
+            {
+                query = query.Where(p => p.Cpf.Contains(cpf));
+            }
+
+            if (!string.IsNullOrEmpty(dtNascIni))
+            {
+                query = query.Where(p => p.DataNascimento == Convert.ToDateTime(dtNascIni));
+            }
+
+            if (!string.IsNullOrEmpty(dtNascFin))
+            {
+                query = query.Where(p => p.DataNascimento == Convert.ToDateTime(dtNascFin));
+            }
+
+            var entity = await query.ToListAsync();
+
+            return entity.Select(s => new ClienteDTO()
+            {
+                Id = s.Id,
+                Cpf = s.Cpf,
+                Email = s.Email,
+                Nome = s.Nome,
+                DataNascimento = s.DataNascimento.ToShortDateString()
+
+            }).ToList();
+        }
+
+        public async Task<int> CreateAsync(ClienteCadastroDTO clienteCadastroDTO)
         {
             var entity = new ClienteEntity()
             {
                 Cpf = clienteCadastroDTO.Cpf,
                 Nome = clienteCadastroDTO.Nome,
-                Email = clienteCadastroDTO.Email
+                Email = clienteCadastroDTO.Email,
+                DataNascimento = Convert.ToDateTime(clienteCadastroDTO.DataNascimento)
             };
 
             await _dataBaseContext.Cliente.AddAsync(entity);
             await _dataBaseContext.SaveChangesAsync();
-        }
 
+            return entity.Id;
+        }
 
         private bool disposed = false;
         protected virtual void Dispose(bool disposing)
@@ -65,5 +95,7 @@ namespace TechChallengeFIAP.Infra.Repositories
             Dispose(true);
             GC.SuppressFinalize(this);
         }
+
+
     }
 }

@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TechChallengeFIAP.Domain.DTOs;
+﻿using TechChallengeFIAP.Domain.DTOs;
 using TechChallengeFIAP.Domain.Interfaces.Repositories;
 using TechChallengeFIAP.Domain.Interfaces.Services;
+using TechChallengeFIAP.Domain.Validations;
 
 namespace TechChallengeFIAP.Domain.Services
 {
@@ -18,20 +14,26 @@ namespace TechChallengeFIAP.Domain.Services
             _clienteRepository = clienteRepository;
         }
 
-        public async Task CreateAsync(ClienteCadastroDTO clienteCadastroDTO)
+        public async Task<int> CreateAsync(ClienteCadastroDTO clienteCadastroDTO)
         {
             var exist = await _clienteRepository.GetByCpfAsync(clienteCadastroDTO.Cpf);
             if (exist == null)
             {
-                await _clienteRepository.CreateAsync(clienteCadastroDTO);
-                return;
+                var id = await _clienteRepository.CreateAsync(clienteCadastroDTO);
+                return id;
             }
             throw new Exception("Cliente já existe.");
         }
 
-        public async Task<ClienteDTO?> GetByCpfAsync(string cpf)
+        public async Task<ClienteDTO> GetByCpfAsync(string cpf)
         {
             return await _clienteRepository.GetByCpfAsync(cpf);
         }
+
+        public async Task<List<ClienteDTO>?> GetByPromotionsAsync(string cpf, string dtNascIni, string dtNascFin)
+        {
+            return await _clienteRepository.GetByPromotionsAsync(cpf, dtNascIni, dtNascFin);
+        }
+
     }
 }

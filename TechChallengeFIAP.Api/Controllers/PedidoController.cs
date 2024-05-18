@@ -1,4 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MercadoPago.Resource.Customer;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
+using Tech_Challenge_Fiap.Core.AbstractServices;
+using Tech_Challenge_Fiap.Core.ConcretServices;
+using Tech_Challenge_Fiap.Core.Helpers;
+using Tech_Challenge_Fiap.Core.Paginetes;
 using TechChallengeFIAP.Domain.DTOs;
 using TechChallengeFIAP.Domain.Interfaces.Services;
 
@@ -11,16 +17,21 @@ namespace TechChallengeFIAP.Api.Controllers
     public class PedidoController : ControllerBase
     {
         private readonly IPedidoService _pedidoService;
+        private readonly IUriService uriService;
 
-        public PedidoController(IPedidoService pedidoService)
+        public PedidoController(IPedidoService pedidoService, IUriService uriService)
         {
             _pedidoService = pedidoService;
+            this.uriService = uriService;
         }
 
         [HttpGet("all")]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll([FromQuery] PaginationFilter filter)
         {
-            return Ok(await _pedidoService.GetAllAsync());
+            var route = Request.Path.Value;
+            var dados = await _pedidoService.GetAllAsync(filter);
+            var pagedReponse = PaginationHelper.CreatePagedReponse<PedidoDTO>(dados.Data, filter, dados.TotalRecords, uriService, route);
+            return Ok(pagedReponse);
         }
 
         [HttpPost]

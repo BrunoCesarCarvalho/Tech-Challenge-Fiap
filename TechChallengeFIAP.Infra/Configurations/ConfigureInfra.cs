@@ -1,15 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using TechChallengeFIAP.Domain.Interfaces.Repositories;
-using TechChallengeFIAP.Domain.Interfaces.Services;
-using TechChallengeFIAP.Domain.Services;
 using TechChallengeFIAP.Infra.Context;
 using TechChallengeFIAP.Infra.Repositories;
 

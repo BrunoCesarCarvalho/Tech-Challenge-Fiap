@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TechChallengeFIAP.Domain.DTOs;
+﻿using TechChallengeFIAP.Domain.DTOs;
 using TechChallengeFIAP.Domain.Interfaces.Repositories;
 using TechChallengeFIAP.Domain.Interfaces.Services;
 

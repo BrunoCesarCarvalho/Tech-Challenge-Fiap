@@ -21,6 +21,7 @@ namespace TechChallengeFIAP.Api.Controllers
         [HttpGet("cpf/{cpf}")]
         public async Task<IActionResult> GetByCpfAsync([FromRoute] string cpf)
         {
+
             return Ok(await _clienteService.GetByCpfAsync(cpf));
         }
 
@@ -29,6 +30,12 @@ namespace TechChallengeFIAP.Api.Controllers
         {
             await _clienteService.CreateAsync(clienteCadastroDTO);
             return StatusCode(StatusCodes.Status201Created);
+        }
+
+        [HttpGet("promotions")]
+        public async Task<IActionResult> GetByPromotionsAsync([FromQuery] string cpf = null, [FromQuery] string dtNascIni = null, [FromQuery] string dtNascFin = null)
+        {
+            return Ok(await _clienteService.GetByPromotionsAsync(cpf, dtNascIni, dtNascFin));
         }
     }
 }

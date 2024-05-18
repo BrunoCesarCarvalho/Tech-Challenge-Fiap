@@ -23,4 +23,5 @@ RUN dotnet publish "./TechChallengeFIAP.Api.csproj" -c $BUILD_CONFIGURATION -o /
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+COPY EstruturaDataBase.sql /docker-entrypoint-initdb.d/EstruturaDataBase.sql
 ENTRYPOINT ["dotnet", "TechChallengeFIAP.Api.dll"]

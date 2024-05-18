@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Tech_Challenge_Fiap.Core.Paginetes;
+using Tech_Challenge_Fiap.Core.Responses;
 using TechChallengeFIAP.Domain.DTOs;
 using TechChallengeFIAP.Domain.Enums;
 using TechChallengeFIAP.Domain.Interfaces.Repositories;
@@ -22,14 +19,29 @@ namespace TechChallengeFIAP.Infra.Repositories
             _dataBaseContext = dataBaseContext;
         }
 
-        public async Task<List<PedidoDTO>> GetAllAsync()
+        public async Task<PagedResponse<List<PedidoDTO>>> GetAllAsync(PaginationFilter filter)
         {
+            var validFilter = new PaginationFilter(filter.PageNumber, filter.PageSize);
+
+
             var pedidos = await _dataBaseContext.Pedido
                 .Include(w => w.Cliente)
                 .Include(w => w.StatusEtapa)
                 .Include(w => w.StatusPagamento)
-                .Include(w => w.PedidoProdutos).ToListAsync();
+                .Include(w => w.PedidoProdutos)
+                .Take(validFilter.PageSize)
+                .Skip((validFilter.PageNumber - 1) * validFilter.PageSize)
+                .ToListAsync();
 
+            var totalRecords = await _dataBaseContext.Pedido.CountAsync();
+
+            var dadosResponse = ToPedidoListDTO(pedidos);
+            
+            return new PagedResponse<List<PedidoDTO>>(dadosResponse, validFilter.PageNumber, validFilter.PageSize);
+        }
+
+        private static List<PedidoDTO> ToPedidoListDTO(List<PedidoEntity> pedidos)
+        {
             return pedidos.Select(x => new PedidoDTO()
             {
                 Id = x.Id,
@@ -41,7 +53,8 @@ namespace TechChallengeFIAP.Infra.Repositories
                     Id = x.Cliente.Id,
                     Cpf = x.Cliente.Cpf,
                     Email = x.Cliente.Email,
-                    Nome = x.Cliente.Nome
+                    Nome = x.Cliente.Nome,
+                    DataNascimento = x.Cliente.DataNascimento.ToShortTimeString()
                 },
                 StatusEtapa = new PedidoStatusEtapaDTO()
                 {

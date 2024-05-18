@@ -32,6 +32,32 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "TechChallengeFIAP.Api.Controllers.ClienteController",
+    "Method": "GetByPromotionsAsync",
+    "RelativePath": "api/Cliente/promotions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cpf",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "dtNascIni",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "dtNascFin",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "TechChallengeFIAP.Api.Controllers.PedidoController",
     "Method": "CreateAsync",
     "RelativePath": "api/Pedido",
@@ -54,7 +80,18 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {

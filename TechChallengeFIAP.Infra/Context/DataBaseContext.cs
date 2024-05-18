@@ -1,9 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TechChallengeFIAP.Infra.Entities;
 
 namespace TechChallengeFIAP.Infra.Context
@@ -13,7 +8,7 @@ namespace TechChallengeFIAP.Infra.Context
 
         public DataBaseContext(DbContextOptions<DataBaseContext> options) : base(options)
         {
-
+            
         }
 
         public DbSet<CategoriaEntity> Categoria { get; set; }
@@ -24,6 +19,7 @@ namespace TechChallengeFIAP.Infra.Context
         public DbSet<PedidoStatusEtapaEntity> PedidoStatusEtapa { get; set; }
         public DbSet<ProdutoImagensEntity> ProdutoImagens { get; set; }
         public DbSet<StatusPagamentoEntity> StatusPagamento { get; set; }
+        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

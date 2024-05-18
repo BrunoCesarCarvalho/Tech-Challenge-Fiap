@@ -1,16 +1,14 @@
 using Microsoft.OpenApi.Models;
+using Tech_Challenge_Fiap.Core.Configurations;
 using TechChallengeFIAP.Domain.Configurations;
-using TechChallengeFIAP.Domain.Interfaces.Repositories;
-using TechChallengeFIAP.Domain.Interfaces.Services;
-using TechChallengeFIAP.Domain.Services;
 using TechChallengeFIAP.Infra.Configurations;
-using TechChallengeFIAP.Infra.Context;
-using TechChallengeFIAP.Infra.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddHttpContextAccessor();
 builder.Services.ConfigurationInfra(builder.Configuration);
 builder.Services.ConfigurationDomain();
+builder.Services.ConfigurationCore();
 
 
 builder.Services.AddControllers();
@@ -48,4 +46,7 @@ app.Use(async (context, next) =>
     await next();
 });
 
+
 app.Run();
+
+
