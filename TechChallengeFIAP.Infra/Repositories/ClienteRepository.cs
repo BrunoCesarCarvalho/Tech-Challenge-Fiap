@@ -41,12 +41,12 @@ namespace TechChallengeFIAP.Infra.Repositories
 
             if (!string.IsNullOrEmpty(dtNascIni))
             {
-                query = query.Where(p => p.DataNascimento == Convert.ToDateTime(dtNascIni));
+                query = query.Where(p => p.DataNascimento >= Convert.ToDateTime(dtNascIni));
             }
 
             if (!string.IsNullOrEmpty(dtNascFin))
             {
-                query = query.Where(p => p.DataNascimento == Convert.ToDateTime(dtNascFin));
+                query = query.Where(p => p.DataNascimento <= Convert.ToDateTime(dtNascFin));
             }
 
             var entity = await query.ToListAsync();

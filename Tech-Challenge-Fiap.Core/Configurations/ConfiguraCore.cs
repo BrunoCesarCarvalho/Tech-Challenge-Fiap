@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using Tech_Challenge_Fiap.Core.AbstractServices;
-using Tech_Challenge_Fiap.Core.ConcretServices;
+using TechChallengeFIAP.Core.AbstractServices;
+using TechChallengeFIAP.Core.ConcretServices;
 
-namespace Tech_Challenge_Fiap.Core.Configurations
+namespace TechChallengeFIAP.Core.Configurations
 {
     public static class ConfiguraCore
     {

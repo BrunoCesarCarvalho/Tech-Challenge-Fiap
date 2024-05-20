@@ -1,5 +1,5 @@
 using Microsoft.OpenApi.Models;
-using Tech_Challenge_Fiap.Core.Configurations;
+using TechChallengeFIAP.Core.Configurations;
 using TechChallengeFIAP.Domain.Configurations;
 using TechChallengeFIAP.Infra.Configurations;
 

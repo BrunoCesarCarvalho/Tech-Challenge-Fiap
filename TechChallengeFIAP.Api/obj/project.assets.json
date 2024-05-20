@@ -1330,7 +1330,7 @@
           }
         }
       },
-      "Tech-Challenge-Fiap.Core/1.0.0": {
+      "TechChallengeFiap.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
@@ -1339,10 +1339,10 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.1"
         },
         "compile": {
-          "bin/placeholder/Tech-Challenge-Fiap.Core.dll": {}
+          "bin/placeholder/TechChallengeFiap.Core.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Tech-Challenge-Fiap.Core.dll": {}
+          "bin/placeholder/TechChallengeFiap.Core.dll": {}
         }
       },
       "TechChallengeFIAP.Domain/1.0.0": {
@@ -1351,7 +1351,7 @@
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.1",
           "QRCoder": "1.4.1",
-          "Tech-Challenge-Fiap.Core": "1.0.0",
+          "TechChallengeFiap.Core": "1.0.0",
           "TechChallengeFiap.Integrations": "1.0.0"
         },
         "compile": {
@@ -1367,8 +1367,8 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "8.0.4",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.4",
-          "Tech-Challenge-Fiap.Core": "1.0.0",
-          "TechChallengeFIAP.Domain": "1.0.0"
+          "TechChallengeFIAP.Domain": "1.0.0",
+          "TechChallengeFiap.Core": "1.0.0"
         },
         "compile": {
           "bin/placeholder/TechChallengeFIAP.Infra.dll": {}
@@ -3945,10 +3945,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Tech-Challenge-Fiap.Core/1.0.0": {
+    "TechChallengeFiap.Core/1.0.0": {
       "type": "project",
-      "path": "../Tech-Challenge-Fiap.Core/Tech-Challenge-Fiap.Core.csproj",
-      "msbuildProject": "../Tech-Challenge-Fiap.Core/Tech-Challenge-Fiap.Core.csproj"
+      "path": "../Tech-Challenge-Fiap.Core/TechChallengeFiap.Core.csproj",
+      "msbuildProject": "../Tech-Challenge-Fiap.Core/TechChallengeFiap.Core.csproj"
     },
     "TechChallengeFIAP.Domain/1.0.0": {
       "type": "project",

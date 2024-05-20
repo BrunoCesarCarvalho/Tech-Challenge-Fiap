@@ -4,12 +4,12 @@
     "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Api\\TechChallengeFIAP.Api.csproj": {}
   },
   "projects": {
-    "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\Tech-Challenge-Fiap.Core\\Tech-Challenge-Fiap.Core.csproj": {
+    "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\Tech-Challenge-Fiap.Core\\TechChallengeFiap.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\Tech-Challenge-Fiap.Core\\Tech-Challenge-Fiap.Core.csproj",
-        "projectName": "Tech-Challenge-Fiap.Core",
-        "projectPath": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\Tech-Challenge-Fiap.Core\\Tech-Challenge-Fiap.Core.csproj",
+        "projectUniqueName": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\Tech-Challenge-Fiap.Core\\TechChallengeFiap.Core.csproj",
+        "projectName": "TechChallengeFiap.Core",
+        "projectPath": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\Tech-Challenge-Fiap.Core\\TechChallengeFiap.Core.csproj",
         "packagesPath": "C:\\Users\\ricar\\.nuget\\packages\\",
         "outputPath": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\Tech-Challenge-Fiap.Core\\obj\\",
         "projectStyle": "PackageReference",
@@ -200,8 +200,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\Tech-Challenge-Fiap.Core\\Tech-Challenge-Fiap.Core.csproj": {
-                "projectPath": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\Tech-Challenge-Fiap.Core\\Tech-Challenge-Fiap.Core.csproj"
+              "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\Tech-Challenge-Fiap.Core\\TechChallengeFiap.Core.csproj": {
+                "projectPath": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\Tech-Challenge-Fiap.Core\\TechChallengeFiap.Core.csproj"
               },
               "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFiap.Integrations\\TechChallengeFiap.Integrations.csproj": {
                 "projectPath": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFiap.Integrations\\TechChallengeFiap.Integrations.csproj"
@@ -283,8 +283,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\Tech-Challenge-Fiap.Core\\Tech-Challenge-Fiap.Core.csproj": {
-                "projectPath": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\Tech-Challenge-Fiap.Core\\Tech-Challenge-Fiap.Core.csproj"
+              "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\Tech-Challenge-Fiap.Core\\TechChallengeFiap.Core.csproj": {
+                "projectPath": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\Tech-Challenge-Fiap.Core\\TechChallengeFiap.Core.csproj"
               },
               "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Domain\\TechChallengeFIAP.Domain.csproj": {
                 "projectPath": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Domain\\TechChallengeFIAP.Domain.csproj"

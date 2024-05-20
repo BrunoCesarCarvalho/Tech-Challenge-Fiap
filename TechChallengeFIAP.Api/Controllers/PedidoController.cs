@@ -1,10 +1,10 @@
 ﻿using MercadoPago.Resource.Customer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
-using Tech_Challenge_Fiap.Core.AbstractServices;
-using Tech_Challenge_Fiap.Core.ConcretServices;
-using Tech_Challenge_Fiap.Core.Helpers;
-using Tech_Challenge_Fiap.Core.Paginetes;
+using TechChallengeFIAP.Core.AbstractServices;
+using TechChallengeFIAP.Core.ConcretServices;
+using TechChallengeFIAP.Core.Helpers;
+using TechChallengeFIAP.Core.Paginetes;
 using TechChallengeFIAP.Domain.DTOs;
 using TechChallengeFIAP.Domain.Interfaces.Services;
 

@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Tech-Challenge-Fiap.Core\Tech-Challenge-Fiap.Core.csproj" />
+    <ProjectReference Include="..\Tech-Challenge-Fiap.Core\TechChallengeFiap.Core.csproj" />
     <ProjectReference Include="..\TechChallengeFiap.Integrations\TechChallengeFiap.Integrations.csproj" />
   </ItemGroup>
 

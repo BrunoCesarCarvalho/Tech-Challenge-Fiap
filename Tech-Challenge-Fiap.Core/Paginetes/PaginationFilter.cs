@@ -1,4 +1,4 @@
-﻿namespace Tech_Challenge_Fiap.Core.Paginetes
+﻿namespace TechChallengeFIAP.Core.Paginetes
 {
     public class PaginationFilter
     {

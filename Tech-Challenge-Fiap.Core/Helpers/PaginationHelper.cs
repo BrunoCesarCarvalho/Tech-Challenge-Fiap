@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tech_Challenge_Fiap.Core.AbstractServices;
-using Tech_Challenge_Fiap.Core.Paginetes;
-using Tech_Challenge_Fiap.Core.Responses;
+using TechChallengeFIAP.Core.AbstractServices;
+using TechChallengeFIAP.Core.Paginetes;
+using TechChallengeFIAP.Core.Responses;
 
-namespace Tech_Challenge_Fiap.Core.Helpers
+namespace TechChallengeFIAP.Core.Helpers
 {
     public class PaginationHelper
     {

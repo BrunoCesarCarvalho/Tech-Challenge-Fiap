@@ -9,6 +9,7 @@ ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["TechChallengeFIAP.Api/TechChallengeFIAP.Api.csproj", "TechChallengeFIAP.Api/"]
 COPY ["TechChallengeFIAP.Domain/TechChallengeFIAP.Domain.csproj", "TechChallengeFIAP.Domain/"]
+COPY ["Tech-Challenge-Fiap.Core/TechChallengeFiap.Core.csproj", "Tech-Challenge-Fiap.Core/"]
 COPY ["TechChallengeFiap.Integrations/TechChallengeFiap.Integrations.csproj", "TechChallengeFiap.Integrations/"]
 COPY ["TechChallengeFIAP.Infra/TechChallengeFIAP.Infra.csproj", "TechChallengeFIAP.Infra/"]
 RUN dotnet restore "./TechChallengeFIAP.Api/TechChallengeFIAP.Api.csproj"

@@ -1,5 +1,6 @@
 USE [master]
 GO
+
 /****** Object:  Database [TechChallengeFIAP]    Script Date: 13/05/2024 22:29:54 ******/
 CREATE DATABASE [TechChallengeFIAP]
 -- CONTAINMENT = NONE
@@ -245,3 +246,30 @@ USE [master]
 GO
 ALTER DATABASE [TechChallengeFIAP] SET  READ_WRITE 
 GO
+
+use TechChallengeFIAP
+go
+--DOMINIOS
+INSERT INTO categoria (nome)
+values('Lanche')
+GO
+INSERT INTO categoria (nome)
+values('Acompanhamento')
+GO
+INSERT INTO categoria (nome)
+values('Bebida')
+GO
+INSERT INTO categoria (nome)
+values('Sobremesa')
+GO
+insert into PedidoStatusEtapa(descricao)
+values('Recebido')
+GO
+insert into PedidoStatusEtapa(descricao)
+values('Em Preparação')
+GO
+insert into PedidoStatusEtapa(descricao)
+values('Pronto')
+GO
+insert into PedidoStatusEtapa(descricao)
+values('Finalizado')

@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{30CFED1F-D4F7-4E6F-A534-5599D81EC4C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tech-Challenge-Fiap.Core", "Tech-Challenge-Fiap.Core\Tech-Challenge-Fiap.Core.csproj", "{91530927-E506-424F-A7A9-99F026DC3B3E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallengeFiap.Core", "Tech-Challenge-Fiap.Core\TechChallengeFiap.Core.csproj", "{91530927-E506-424F-A7A9-99F026DC3B3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

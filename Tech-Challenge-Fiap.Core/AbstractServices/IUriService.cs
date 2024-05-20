@@ -1,6 +1,6 @@
-﻿using Tech_Challenge_Fiap.Core.Paginetes;
+﻿using TechChallengeFIAP.Core.Paginetes;
 
-namespace Tech_Challenge_Fiap.Core.AbstractServices
+namespace TechChallengeFIAP.Core.AbstractServices
 {
     public interface IUriService
     {

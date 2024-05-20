@@ -1,4 +1,4 @@
-﻿namespace Tech_Challenge_Fiap.Core.Responses
+﻿namespace TechChallengeFIAP.Core.Responses
 {
     public class ApiResponse
     {

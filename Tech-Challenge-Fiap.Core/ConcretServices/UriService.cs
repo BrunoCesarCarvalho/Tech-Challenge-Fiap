@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.WebUtilities;
-using Tech_Challenge_Fiap.Core.AbstractServices;
-using Tech_Challenge_Fiap.Core.Paginetes;
+using TechChallengeFIAP.Core.AbstractServices;
+using TechChallengeFIAP.Core.Paginetes;
 
-namespace Tech_Challenge_Fiap.Core.ConcretServices
+namespace TechChallengeFIAP.Core.ConcretServices
 {
     public class UriService : IUriService
     {

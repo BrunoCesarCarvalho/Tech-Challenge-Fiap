@@ -1,5 +1,5 @@
-﻿using Tech_Challenge_Fiap.Core.Paginetes;
-using Tech_Challenge_Fiap.Core.Responses;
+﻿using TechChallengeFIAP.Core.Paginetes;
+using TechChallengeFIAP.Core.Responses;
 using TechChallengeFIAP.Domain.DTOs;
 
 namespace TechChallengeFIAP.Domain.Interfaces.Repositories
