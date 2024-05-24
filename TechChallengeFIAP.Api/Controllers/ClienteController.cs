@@ -37,5 +37,7 @@ namespace TechChallengeFIAP.Api.Controllers
         {
             return Ok(await _clienteService.GetByPromotionsAsync(cpf, dtNascIni, dtNascFin));
         }
+
+
     }
 }

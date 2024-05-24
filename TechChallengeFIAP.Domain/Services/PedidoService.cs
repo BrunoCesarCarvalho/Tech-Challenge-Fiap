@@ -148,13 +148,13 @@ namespace TechChallengeFIAP.Domain.Services
         {
             switch (idStatus)
             {
-                case 1:
-                case 2:
-                case 3:
-                case 4:
+                case (int)EnumPedidoStatusEtapa.Recebido:
+                case (int)EnumPedidoStatusEtapa.EmPreparacao:
+                case (int)EnumPedidoStatusEtapa.Pronto:
+                case (int)EnumPedidoStatusEtapa.Finalizado:
                     await _pedidoRepository.ChangeStatusAsync(idPedido, idStatus);
                     break;
-                default: throw new Exception("Option there is not exist.");
+                default: throw new Exception("There is not exist option.");
 
             }
         }

@@ -273,3 +273,11 @@ values('Pronto')
 GO
 insert into PedidoStatusEtapa(descricao)
 values('Finalizado')
+
+GO
+insert into StatusPagamento(Descricao)
+values('Pendente')
+GO
+insert into StatusPagamento(Descricao)
+values('Pago')
+

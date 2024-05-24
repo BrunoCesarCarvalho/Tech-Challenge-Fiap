@@ -12,11 +12,11 @@ builder.Services.ConfigurationCore();
 
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "TechChallengeFiap", Version = "v1" });
 });
 
 var app = builder.Build();
@@ -30,7 +30,7 @@ app.MapControllers();
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
-    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "TechChallengeFiap V1");
     c.RoutePrefix = string.Empty; // Makes the Swagger UI the default page
 });
 

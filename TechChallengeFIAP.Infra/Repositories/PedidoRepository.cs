@@ -31,12 +31,13 @@ namespace TechChallengeFIAP.Infra.Repositories
                 .Include(w => w.PedidoProdutos)
                 .Take(validFilter.PageSize)
                 .Skip((validFilter.PageNumber - 1) * validFilter.PageSize)
+                .OrderBy(o => o.Data)
                 .ToListAsync();
 
             var totalRecords = await _dataBaseContext.Pedido.CountAsync();
 
             var dadosResponse = ToPedidoListDTO(pedidos);
-            
+
             return new PagedResponse<List<PedidoDTO>>(dadosResponse, validFilter.PageNumber, validFilter.PageSize);
         }
 
@@ -161,7 +162,7 @@ namespace TechChallengeFIAP.Infra.Repositories
             await _dataBaseContext.SaveChangesAsync();
         }
 
-        public async Task ChangeStatusAsync(int idPedido,int idStatus)
+        public async Task ChangeStatusAsync(int idPedido, int idStatus)
         {
             var entity = await _dataBaseContext.Pedido.FirstOrDefaultAsync(w => w.Id == idPedido);
             entity.IdStatusEtapa = idStatus;

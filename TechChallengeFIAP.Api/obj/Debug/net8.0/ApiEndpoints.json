@@ -213,7 +213,7 @@
   {
     "ContainingType": "TechChallengeFIAP.Api.Controllers.ProdutoController",
     "Method": "GetListByIdCategoryAsync",
-    "RelativePath": "ListByIdCategoryAsync/{categoryId}",
+    "RelativePath": "api/Produto/ListByIdCategoryAsync/{categoryId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -229,7 +229,7 @@
   {
     "ContainingType": "TechChallengeFIAP.Api.Controllers.ProdutoController",
     "Method": "GetListByNomeCategoryAsync",
-    "RelativePath": "ListByNomeCategoryAsync/{nome}",
+    "RelativePath": "api/Produto/ListByNomeCategoryAsync/{nome}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

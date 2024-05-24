@@ -53,13 +53,13 @@ namespace TechChallengeFIAP.Api.Controllers
             return StatusCode(StatusCodes.Status204NoContent);
         }
 
-        [HttpGet("/ListByIdCategoryAsync/{categoryId}")]
+        [HttpGet("ListByIdCategoryAsync/{categoryId}")]
         public async Task<IActionResult> GetListByIdCategoryAsync([FromRoute] int categoryId)
         {            
             return Ok(await _produtoService.GetListByIdCategoryAsync(categoryId));
         }
 
-        [HttpGet("/ListByNomeCategoryAsync/{nome}")]
+        [HttpGet("ListByNomeCategoryAsync/{nome}")]
         public async Task<IActionResult> GetListByNomeCategoryAsync([FromRoute] string nome)
         {
             return Ok(await _produtoService.GetListByNomeCategoryAsync(nome));

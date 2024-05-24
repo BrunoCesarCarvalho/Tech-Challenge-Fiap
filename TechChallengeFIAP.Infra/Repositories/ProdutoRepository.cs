@@ -108,7 +108,7 @@ namespace TechChallengeFIAP.Infra.Repositories
             var entityImagens = await _dataBaseContext.ProdutoImagens.Where(w => w.IdProduto == Id).ToListAsync();
             _dataBaseContext.ProdutoImagens.RemoveRange(entityImagens);
 
-            var entity = await _dataBaseContext.Produto.FirstOrDefaultAsync(w=>w.Id == Id);
+            var entity = await _dataBaseContext.Produto.FirstOrDefaultAsync(w => w.Id == Id);
             _dataBaseContext.Remove(entity);
             await _dataBaseContext.SaveChangesAsync();
 
@@ -155,9 +155,19 @@ namespace TechChallengeFIAP.Infra.Repositories
             {
                 Descricao = x.Descricao,
                 Id = x.Id,
-                IdCategoriaProduto = x.IdCategoriaProduto,
                 Nome = x.Nome,
-                Valor = x.Valor
+                Valor = x.Valor,
+                CategoriaDTO = new CategoriaDTO()
+                {
+                    Id = categoryId,
+                    Nome = x.Categoria.Nome,
+                },
+                ProdutoImagensDTO = x.Imagens.Select(s => new ProdutoImagensDTO()
+                {
+                    Id = s.Id,
+                    Foto = s.Foto,
+
+                }).ToList()
             }).ToListAsync();
         }
 
@@ -191,6 +201,6 @@ namespace TechChallengeFIAP.Infra.Repositories
             GC.SuppressFinalize(this);
         }
 
-        
+
     }
 }
