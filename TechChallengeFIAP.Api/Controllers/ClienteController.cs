@@ -18,13 +18,28 @@ namespace TechChallengeFIAP.Api.Controllers
             _clienteService = clienteService;
         }
 
+
+        /// <summary>
+        /// Metodo que obtém o cliente pelo seu CPF
+        /// </summary>
+        /// <returns>Retorna o cliente da busca</returns>
+
         [HttpGet("cpf/{cpf}")]
         public async Task<IActionResult> GetByCpfAsync([FromRoute] string cpf)
         {
-
+            var res = await _clienteService.GetByCpfAsync(cpf);
+            if(res == null)
+            {
+                return NotFound();
+            }
             return Ok(await _clienteService.GetByCpfAsync(cpf));
         }
 
+
+        /// <summary>
+        /// Metodo que cria um novo cliente
+        /// </summary>
+        /// <returns>Retorna o ID do cliente criado</returns>
         [HttpPost]
         public async Task<IActionResult> CreateAsync([FromBody] ClienteCadastroDTO clienteCadastroDTO)
         {
@@ -32,6 +47,11 @@ namespace TechChallengeFIAP.Api.Controllers
             return StatusCode(StatusCodes.Status201Created);
         }
 
+
+        /// <summary>
+        /// Metodo obtém uma lista de clientes que são candidatos a uma promoção
+        /// </summary>
+        /// <returns>Retorna uma lista clientes</returns>
         [HttpGet("promotions")]
         public async Task<IActionResult> GetByPromotionsAsync([FromQuery] string cpf = null, [FromQuery] string dtNascIni = null, [FromQuery] string dtNascFin = null)
         {

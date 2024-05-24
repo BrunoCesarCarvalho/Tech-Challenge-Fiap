@@ -1,4 +1,5 @@
 using Microsoft.OpenApi.Models;
+using System.Reflection;
 using TechChallengeFIAP.Core.Configurations;
 using TechChallengeFIAP.Domain.Configurations;
 using TechChallengeFIAP.Infra.Configurations;
@@ -17,6 +18,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "TechChallengeFiap", Version = "v1" });
+
+    // Configurar para usar os comentários XML
+    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    c.IncludeXmlComments(xmlPath);
 });
 
 var app = builder.Build();

@@ -25,6 +25,10 @@ namespace TechChallengeFIAP.Api.Controllers
             this.uriService = uriService;
         }
 
+        /// <summary>
+        /// Metodo que obtém todos os Pedidos realizados no sistema
+        /// </summary>
+        /// <returns>Uma lista de Pedidos.</returns>
         [HttpGet("all")]
         public async Task<IActionResult> GetAll([FromQuery] PaginationFilter filter)
         {
@@ -34,6 +38,12 @@ namespace TechChallengeFIAP.Api.Controllers
             return Ok(pagedReponse);
         }
 
+
+        /// <summary>
+        /// Metodo que cria os pedidos no sistema, para clientes que informam os dados ou não, para aqueles que informam, apenas deixar o CPF em branco;
+        /// O status fica como pendente
+        /// </summary>
+        /// <returns>Retorno o ID do pedido criado.</returns>
         [HttpPost]
         public async Task<IActionResult> CreateAsync([FromBody] CreatePedidoDTO createPedidoDTO)
         {
@@ -41,6 +51,20 @@ namespace TechChallengeFIAP.Api.Controllers
             return StatusCode(StatusCodes.Status201Created, idPedido);
         }
 
+        /// <summary>
+        /// Metodo que altera o status do de acompanhamento Pedido
+        /// </summary>
+        [HttpPut("change-status/{id}/{idStatus}")]
+        public async Task<IActionResult> ChangeStatusAsync([FromRoute] int id, [FromRoute] int idStatus)
+        {
+            await _pedidoService.ChangeStatusAsync(id, idStatus);
+            return StatusCode(StatusCodes.Status204NoContent);
+        }
+
+        /// <summary>
+        /// Metodo que gera o QrCode para cliente, passando o ID do pedido que foi criado
+        /// </summary>
+        /// <returns>Retorna o QR para pagamento.</returns>
         [HttpGet("qr-code/{id}")]
         public async Task<IActionResult> GetQrCodeAsync([FromRoute] int id)
         {
@@ -48,13 +72,9 @@ namespace TechChallengeFIAP.Api.Controllers
             return File(image, "image/jpeg");
         }
 
-        [HttpPut("change-status/{id}/{idStatus}")]
-        public async Task<IActionResult> ChangeStatusAsync([FromRoute] int id, [FromBody] int idStatus)
-        {
-            await _pedidoService.ChangeStatusAsync(id, idStatus);
-            return StatusCode(StatusCodes.Status204NoContent);
-        }
-
+        /// <summary>
+        /// Metodo que confirma o pagamento do cliente, o status fica como Pago no sistema
+        /// </summary>       
         [HttpPut("confirm-payment/{Id}")]
         public async Task<IActionResult> ConfirmePaymentAsync([FromRoute] int Id)
         {

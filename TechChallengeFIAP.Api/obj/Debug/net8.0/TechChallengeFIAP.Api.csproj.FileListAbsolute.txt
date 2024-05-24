@@ -83,6 +83,7 @@ C:\_GTI_FIAP\Tech-Challenge-Fiap\TechChallengeFIAP.Api\bin\Debug\net8.0\TechChal
 C:\_GTI_FIAP\Tech-Challenge-Fiap\TechChallengeFIAP.Api\bin\Debug\net8.0\TechChallengeFIAP.Api.runtimeconfig.json
 C:\_GTI_FIAP\Tech-Challenge-Fiap\TechChallengeFIAP.Api\bin\Debug\net8.0\TechChallengeFIAP.Api.dll
 C:\_GTI_FIAP\Tech-Challenge-Fiap\TechChallengeFIAP.Api\bin\Debug\net8.0\TechChallengeFIAP.Api.pdb
+C:\_GTI_FIAP\Tech-Challenge-Fiap\TechChallengeFIAP.Api\bin\Debug\net8.0\TechChallengeFIAP.Api.xml
 C:\_GTI_FIAP\Tech-Challenge-Fiap\TechChallengeFIAP.Api\bin\Debug\net8.0\Azure.Core.dll
 C:\_GTI_FIAP\Tech-Challenge-Fiap\TechChallengeFIAP.Api\bin\Debug\net8.0\Azure.Identity.dll
 C:\_GTI_FIAP\Tech-Challenge-Fiap\TechChallengeFIAP.Api\bin\Debug\net8.0\MercadoPago.dll
@@ -158,6 +159,7 @@ C:\_GTI_FIAP\Tech-Challenge-Fiap\TechChallengeFIAP.Api\obj\Debug\net8.0\scopedcs
 C:\_GTI_FIAP\Tech-Challenge-Fiap\TechChallengeFIAP.Api\obj\Debug\net8.0\TechChal.EF61249B.Up2Date
 C:\_GTI_FIAP\Tech-Challenge-Fiap\TechChallengeFIAP.Api\obj\Debug\net8.0\TechChallengeFIAP.Api.dll
 C:\_GTI_FIAP\Tech-Challenge-Fiap\TechChallengeFIAP.Api\obj\Debug\net8.0\refint\TechChallengeFIAP.Api.dll
+C:\_GTI_FIAP\Tech-Challenge-Fiap\TechChallengeFIAP.Api\obj\Debug\net8.0\TechChallengeFIAP.Api.xml
 C:\_GTI_FIAP\Tech-Challenge-Fiap\TechChallengeFIAP.Api\obj\Debug\net8.0\TechChallengeFIAP.Api.pdb
 C:\_GTI_FIAP\Tech-Challenge-Fiap\TechChallengeFIAP.Api\obj\Debug\net8.0\TechChallengeFIAP.Api.genruntimeconfig.cache
 C:\_GTI_FIAP\Tech-Challenge-Fiap\TechChallengeFIAP.Api\obj\Debug\net8.0\ref\TechChallengeFIAP.Api.dll

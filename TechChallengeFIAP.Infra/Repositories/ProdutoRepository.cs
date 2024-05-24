@@ -157,6 +157,7 @@ namespace TechChallengeFIAP.Infra.Repositories
                 Id = x.Id,
                 Nome = x.Nome,
                 Valor = x.Valor,
+                IdCategoriaProduto = x.IdCategoriaProduto,
                 CategoriaDTO = new CategoriaDTO()
                 {
                     Id = categoryId,
@@ -177,9 +178,21 @@ namespace TechChallengeFIAP.Infra.Repositories
             {
                 Descricao = x.Descricao,
                 Id = x.Id,
-                IdCategoriaProduto = x.IdCategoriaProduto,
                 Nome = x.Nome,
-                Valor = x.Valor
+                Valor = x.Valor,
+                IdCategoriaProduto = x.IdCategoriaProduto,
+                CategoriaDTO = new CategoriaDTO()
+                {
+                    Id = x.IdCategoriaProduto,
+                    Nome = x.Categoria.Nome,
+                },
+                ProdutoImagensDTO = x.Imagens.Select(s => new ProdutoImagensDTO()
+                {
+                    Id = s.Id,
+                    IdProduto = s.IdProduto,
+                    Foto = s.Foto,
+
+                }).ToList()
             }).ToListAsync();
         }
 

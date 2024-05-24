@@ -1,14 +1,8 @@
 USE [master]
 GO
-
-/****** Object:  Database [TechChallengeFIAP]    Script Date: 13/05/2024 22:29:54 ******/
+/****** Object:  Database [TechChallengeFIAP]    Script Date: 23/05/2024 22:54:33 ******/
 CREATE DATABASE [TechChallengeFIAP]
--- CONTAINMENT = NONE
--- ON  PRIMARY 
---( NAME = N'Cliente', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\Cliente.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
--- LOG ON 
---( NAME = N'Cliente_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\Cliente_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
--- WITH CATALOG_COLLATION = DATABASE_DEFAULT
+
 GO
 ALTER DATABASE [TechChallengeFIAP] SET COMPATIBILITY_LEVEL = 150
 GO
@@ -77,11 +71,13 @@ ALTER DATABASE [TechChallengeFIAP] SET DELAYED_DURABILITY = DISABLED
 GO
 ALTER DATABASE [TechChallengeFIAP] SET ACCELERATED_DATABASE_RECOVERY = OFF  
 GO
+EXEC sys.sp_db_vardecimal_storage_format N'TechChallengeFIAP', N'ON'
+GO
 ALTER DATABASE [TechChallengeFIAP] SET QUERY_STORE = OFF
 GO
 USE [TechChallengeFIAP]
 GO
-/****** Object:  Table [dbo].[Categoria]    Script Date: 13/05/2024 22:29:54 ******/
+/****** Object:  Table [dbo].[Categoria]    Script Date: 23/05/2024 22:54:33 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -95,7 +91,7 @@ CREATE TABLE [dbo].[Categoria](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Cliente]    Script Date: 13/05/2024 22:29:54 ******/
+/****** Object:  Table [dbo].[Cliente]    Script Date: 23/05/2024 22:54:33 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -105,6 +101,7 @@ CREATE TABLE [dbo].[Cliente](
 	[Cpf] [varchar](11) NOT NULL,
 	[Nome] [varchar](100) NOT NULL,
 	[Email] [varchar](100) NOT NULL,
+	[DataNascimento] [datetime] NOT NULL,
  CONSTRAINT [PK_Cliente] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -113,13 +110,13 @@ CREATE TABLE [dbo].[Cliente](
 (
 	[Email] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
-UNIQUE NONCLUSTERED 
+ CONSTRAINT [UQ__Cliente__C1FF930977CB0E0A] UNIQUE NONCLUSTERED 
 (
 	[Cpf] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Pedido]    Script Date: 13/05/2024 22:29:54 ******/
+/****** Object:  Table [dbo].[Pedido]    Script Date: 23/05/2024 22:54:33 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -138,7 +135,7 @@ CREATE TABLE [dbo].[Pedido](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PedidoProdutos]    Script Date: 13/05/2024 22:29:54 ******/
+/****** Object:  Table [dbo].[PedidoProdutos]    Script Date: 23/05/2024 22:54:33 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -154,7 +151,7 @@ CREATE TABLE [dbo].[PedidoProdutos](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PedidoStatusEtapa]    Script Date: 13/05/2024 22:29:54 ******/
+/****** Object:  Table [dbo].[PedidoStatusEtapa]    Script Date: 23/05/2024 22:54:33 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -168,7 +165,7 @@ CREATE TABLE [dbo].[PedidoStatusEtapa](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Produto]    Script Date: 13/05/2024 22:29:54 ******/
+/****** Object:  Table [dbo].[Produto]    Script Date: 23/05/2024 22:54:33 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -185,7 +182,7 @@ CREATE TABLE [dbo].[Produto](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ProdutoImagens]    Script Date: 13/05/2024 22:29:54 ******/
+/****** Object:  Table [dbo].[ProdutoImagens]    Script Date: 23/05/2024 22:54:33 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -200,7 +197,7 @@ CREATE TABLE [dbo].[ProdutoImagens](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[StatusPagamento]    Script Date: 13/05/2024 22:29:54 ******/
+/****** Object:  Table [dbo].[StatusPagamento]    Script Date: 23/05/2024 22:54:33 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -238,6 +235,9 @@ ALTER TABLE [dbo].[Produto]  WITH CHECK ADD  CONSTRAINT [Produto_Categoria_FK] F
 REFERENCES [dbo].[Categoria] ([Id])
 GO
 ALTER TABLE [dbo].[Produto] CHECK CONSTRAINT [Produto_Categoria_FK]
+GO
+ALTER TABLE [dbo].[ProdutoImagens]  WITH CHECK ADD FOREIGN KEY([IdProduto])
+REFERENCES [dbo].[Produto] ([Id])
 GO
 ALTER TABLE [dbo].[ProdutoImagens]  WITH CHECK ADD FOREIGN KEY([IdProduto])
 REFERENCES [dbo].[Produto] ([Id])
@@ -280,4 +280,3 @@ values('Pendente')
 GO
 insert into StatusPagamento(Descricao)
 values('Pago')
-

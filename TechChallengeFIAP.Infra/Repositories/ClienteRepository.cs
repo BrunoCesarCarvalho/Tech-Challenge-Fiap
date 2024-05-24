@@ -26,7 +26,8 @@ namespace TechChallengeFIAP.Infra.Repositories
                 Id = entity.Id,
                 Cpf = entity.Cpf,
                 Email = entity.Email,
-                Nome = entity.Nome
+                Nome = entity.Nome,
+                DataNascimento = entity.DataNascimento.ToShortDateString()
             } : null;
         }
 

@@ -111,11 +111,6 @@
         "Name": "idStatus",
         "Type": "System.Int32",
         "IsRequired": true
-      },
-      {
-        "Name": "idStatus",
-        "Type": "",
-        "IsRequired": true
       }
     ],
     "ReturnTypes": []
