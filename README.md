@@ -13,12 +13,6 @@ Repositório com o projeto que apresenta os entregáveis do Tech Challenge do cu
 - Criação de Dockerfile e Docker-compose 
 
 
-## Funcionalidades do projeto
-
-O App lista produtos com imagem, título, descrição e valor. Também, é possível cadastrar produtos. Todo armazenamento é mantido em memória do App, portanto, ao finalizar o App as informações são perdidas.
-
-![](img/amostra.gif)
-
 ## Tecnologias utilizadas
 
 As técnicas e tecnologias utilizadas pra isso são:
