@@ -7,7 +7,7 @@ Repositório com o projeto que apresenta os entregáveis do Tech Challenge do cu
 
 ### Fase 1
 
-- Domain Driver Design Brainstorming 
+- Domain Driven Design Brainstorming 
 - Aplicação de arquitetura Hexagonal
 - Aplicação monolítica com .NET 8 e SQLServer
 - Criação de Dockerfile e Docker-compose 
