@@ -6,6 +6,7 @@ using TechChallengeFIAP.Core.ConcretServices;
 using TechChallengeFIAP.Core.Helpers;
 using TechChallengeFIAP.Core.Paginetes;
 using TechChallengeFIAP.Domain.DTOs;
+using TechChallengeFIAP.Domain.Enums;
 using TechChallengeFIAP.Domain.Interfaces.Services;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -40,8 +41,22 @@ namespace TechChallengeFIAP.Api.Controllers
 
 
         /// <summary>
+        /// Metodo que retorna os Pedidos com Status (Recebido, EmPreparacao, Pronto)
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
+        [HttpGet("pedido-active")]
+        public async Task<IActionResult> GetPedidoActive([FromQuery] PaginationFilter filter)
+        {
+            var route = Request.Path.Value;
+            var dados = await _pedidoService.PedidosActive(filter);
+            var pagedReponse = PaginationHelper.CreatePagedReponse<PedidoDTO>(dados.Data, filter, dados.TotalRecords, uriService, route);
+            return Ok(pagedReponse);
+        }
+
+        /// <summary>
         /// Metodo que cria os pedidos no sistema, para clientes que informam os dados ou não, para aqueles que informam, apenas deixar o CPF em branco;
-        /// O status fica como pendente
+        /// O status fica como Pendente e o QRCode é criado
         /// </summary>
         /// <returns>Retorno o ID do pedido criado.</returns>
         [HttpPost]
@@ -52,17 +67,17 @@ namespace TechChallengeFIAP.Api.Controllers
         }
 
         /// <summary>
-        /// Metodo que altera o status do de acompanhamento Pedido
+        /// Metodo que altera o status do Pedido
         /// </summary>
-        [HttpPut("change-status/{id}/{idStatus}")]
-        public async Task<IActionResult> ChangeStatusAsync([FromRoute] int id, [FromRoute] int idStatus)
+        [HttpPut("change-status/{id}/{enumPedidoStatusEtapa}")]
+        public async Task<IActionResult> ChangeStatusAsync([FromRoute] int id, [FromRoute] EnumPedidoStatusEtapa enumPedidoStatusEtapa)
         {
-            await _pedidoService.ChangeStatusAsync(id, idStatus);
+            await _pedidoService.ChangeStatusAsync(id, (int)enumPedidoStatusEtapa);
             return StatusCode(StatusCodes.Status204NoContent);
         }
 
         /// <summary>
-        /// Metodo que gera o QrCode para cliente, passando o ID do pedido que foi criado
+        /// Metodo que retorna o QrCode para cliente, passando o ID do pedido que foi criado
         /// </summary>
         /// <returns>Retorna o QR para pagamento.</returns>
         [HttpGet("qr-code/{id}")]

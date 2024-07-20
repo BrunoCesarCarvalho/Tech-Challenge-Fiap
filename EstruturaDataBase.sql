@@ -98,21 +98,13 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Cliente](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[Cpf] [varchar](11) NOT NULL,
-	[Nome] [varchar](100) NOT NULL,
-	[Email] [varchar](100) NOT NULL,
+	[Cpf] [varchar](11) NULL,
+	[Nome] [varchar](100) NULL,
+	[Email] [varchar](100) NULL,
 	[DataNascimento] [datetime] NOT NULL,
  CONSTRAINT [PK_Cliente] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
- CONSTRAINT [UQ__Cliente__A9D10534AFEB410A] UNIQUE NONCLUSTERED 
-(
-	[Email] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
- CONSTRAINT [UQ__Cliente__C1FF930977CB0E0A] UNIQUE NONCLUSTERED 
-(
-	[Cpf] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
@@ -280,3 +272,69 @@ values('Pendente')
 GO
 insert into StatusPagamento(Descricao)
 values('Pago')
+
+go
+
+-- Limpa a tabela Produto antes de inserir novos dados
+DELETE FROM [dbo].[Produto];
+
+-- Variáveis para armazenar nomes e descrições dos produtos
+DECLARE @ProdutoNomes TABLE (IdCategoria INT, Nome VARCHAR(50), Descricao VARCHAR(50));
+INSERT INTO @ProdutoNomes (IdCategoria, Nome, Descricao) VALUES
+(1, 'Hamburguer', 'Delicioso hamburguer artesanal'),
+(1, 'Cheeseburguer', 'Hamburguer com queijo cheddar'),
+(1, 'Frango Frito', 'Frango crocante e suculento'),
+(1, 'Hot Dog', 'Cachorro quente com molho especial'),
+(1, 'Pizza', 'Pizza de queijo e pepperoni'),
+(1, 'Tacos', 'Tacos recheados com carne e queijo'),
+(1, 'Quesadilla', 'Quesadilla com frango e queijo'),
+(1, 'Nachos', 'Nachos com queijo derretido e guacamole'),
+(1, 'Burrito', 'Burrito de carne com feijão e arroz'),
+(1, 'Sushi', 'Sushi variado de peixe fresco'),
+(2, 'Batata Frita', 'Batata frita crocante'),
+(2, 'Salada', 'Salada fresca com diversos legumes'),
+(2, 'Onion Rings', 'Anéis de cebola empanados e fritos'),
+(2, 'Batata Assada', 'Batata assada com recheio de creme de leite'),
+(2, 'Mozzarella Sticks', 'Palitos de mozzarella empanados e fritos'),
+(2, 'Coxinha', 'Coxinha de frango com catupiry'),
+(2, 'Kibe', 'Kibe frito com recheio de carne'),
+(2, 'Esfiha', 'Esfiha aberta de carne'),
+(2, 'Pastel', 'Pastel de queijo e presunto'),
+(2, 'Bolinho de Bacalhau', 'Bolinho de bacalhau frito'),
+(3, 'Refrigerante', 'Refrigerante de cola gelado'),
+(3, 'Suco de Laranja', 'Suco natural de laranja'),
+(3, 'Água Mineral', 'Água mineral sem gás'),
+(3, 'Café', 'Café preto sem açúcar'),
+(3, 'Chá Gelado', 'Chá gelado de limão'),
+(3, 'Smoothie', 'Smoothie de frutas vermelhas'),
+(3, 'Milkshake', 'Milkshake de chocolate com chantilly'),
+(3, 'Limonada', 'Limonada fresca e gelada'),
+(3, 'Cerveja', 'Cerveja artesanal'),
+(3, 'Vinho', 'Taça de vinho tinto'),
+(4, 'Sorvete', 'Sorvete de baunilha com cobertura de chocolate'),
+(4, 'Bolo de Chocolate', 'Bolo de chocolate com recheio de brigadeiro'),
+(4, 'Pudim', 'Pudim de leite condensado com calda de caramelo'),
+(4, 'Torta de Maçã', 'Torta de maçã com canela'),
+(4, 'Mousse de Maracujá', 'Mousse de maracujá com cobertura de chantilly'),
+(4, 'Brigadeiro', 'Brigadeiro de chocolate granulado'),
+(4, 'Beijinho', 'Beijinho de coco com cravo'),
+(4, 'Palha Italiana', 'Palha italiana de chocolate com biscoito'),
+(4, 'Petit Gateau', 'Petit gateau com sorvete de baunilha'),
+(4, 'Creme Brulee', 'Creme brulee com crosta de açúcar queimado');
+
+-- Insere dados reais na tabela Produto
+DECLARE @i INT = 1;
+
+-- Loop para inserir 50 produtos
+WHILE @i <= 50
+BEGIN
+    -- Seleciona um produto aleatório da tabela @ProdutoNomes
+    INSERT INTO [dbo].[Produto] (IdCategoriaProduto, Nome, Descricao, Valor)
+    SELECT TOP 1 IdCategoria, Nome, Descricao, 
+        -- Valor aleatório entre 1.00 e 100.00
+        CAST(ROUND(RAND(CHECKSUM(NEWID())) * 100, 2) AS DECIMAL(18, 2))
+    FROM @ProdutoNomes
+    ORDER BY NEWID();
+
+    SET @i = @i + 1;
+END

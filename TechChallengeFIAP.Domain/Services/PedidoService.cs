@@ -44,9 +44,10 @@ namespace TechChallengeFIAP.Domain.Services
             {
                 idClienteAvulso = await _clienteRepository.CreateAsync(new ClienteCadastroDTO()
                 {
-                    Cpf = null,
-                    Email = null,
-                    DataNascimento = "1900-01-01"
+                    Cpf = "00000000000",
+                    Email = "00000000000",
+                    Nome = "Avulso",
+                    DataNascimento = DateTime.Now.ToString("yyyy-MM-dd")
                 });
             }
 
@@ -87,8 +88,8 @@ namespace TechChallengeFIAP.Domain.Services
             var payloadModel = new PayloadModel();
             payloadModel.external_reference = idPedido.ToString();
             payloadModel.total_amount = totalAmount;
-            payloadModel.title = "IdPedido: " + idPedido.ToString() + " - CPF: " + clienteDTO.Cpf;
-            payloadModel.description = "IdPedido: " + idPedido.ToString() + " - CPF: " + clienteDTO.Cpf;
+            payloadModel.title = idClienteAvulso > 0 ? idClienteAvulso.ToString() : clienteDTO.Id.ToString();
+            payloadModel.description = idClienteAvulso > 0 ? idClienteAvulso.ToString() : clienteDTO.Id.ToString();
             payloadModel.notification_url = "https://hookb.in/9X9WQQmQ3puyw80KPddB";
 
             payloadModel.items = new List<ItemModel>();
@@ -119,6 +120,10 @@ namespace TechChallengeFIAP.Domain.Services
 
         public async Task<byte[]> GetQrCodeAsync(int IdPedido)
         {
+            var pedidoJaPago = await _pedidoRepository.GetByIdAsync(IdPedido);
+            if (pedidoJaPago != null && pedidoJaPago.StatusPagamento.Id == (int)EnumStatusPagamento.Pago)
+                throw new Exception("Pedido já foi pago");
+
             var pedido = await _pedidoRepository.GetByIdAsync(IdPedido);
             return GenerateByteArray(pedido.QrData);
         }
@@ -162,6 +167,11 @@ namespace TechChallengeFIAP.Domain.Services
         public async Task ConfirmPaymentAsync(int idPedido)
         {
             await _pedidoRepository.ConfirmPaymentAsync(idPedido);
+        }
+
+        public async Task<PagedResponse<List<PedidoDTO>>> PedidosActive(PaginationFilter filter)
+        {
+            return await _pedidoRepository.PedidosActive(filter);
         }
     }
 }

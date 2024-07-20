@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fiap-api-tech-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fiap-api-tech
+  template:
+    metadata:
+      labels:
+        app: fiap-api-tech
+    spec:
+      containers:
+      - name: fiap-api-tech
+        image: ricardosn87/fiap-api-tech:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: ASPNETCORE_URLS
+          value: http://*:80      
+        - name: ConnectionStrings__DataBase
+          value: "Data Source=sqlserver-service;Initial Catalog=TechChallengeFIAP;User ID=sa;Password=YourStrong@Passw0rd;Integrated Security=False;Encrypt=False;TrustServerCertificate=True"

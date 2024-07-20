@@ -2,7 +2,7 @@
 {
     public class PedidoDTO
     {
-        public int Id { get; set; }
+        public int PedidoId { get; set; }
         public DateTime Data { get; set; }
         public decimal ValorTotal { get; set; }
 

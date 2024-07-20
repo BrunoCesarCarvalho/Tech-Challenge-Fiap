@@ -7,6 +7,8 @@ namespace TechChallengeFIAP.Domain.Interfaces.Repositories
     public interface IPedidoRepository
     {
         Task<PagedResponse<List<PedidoDTO>>> GetAllAsync(PaginationFilter filter);
+
+        Task<PagedResponse<List<PedidoDTO>>> PedidosActive(PaginationFilter filter);
         Task<int> CreatePedidoAsync(CreatePedidoOnlyDTO createPedidoOnlyDTO);
         Task<List<PedidoMercadoPagoDTO>> GetPedidoMercadoPago(int IdPedido);
         Task SaveQrDataAsync(string qrData, int idPedido);

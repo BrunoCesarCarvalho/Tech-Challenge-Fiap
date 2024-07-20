@@ -87,13 +87,17 @@ namespace TechChallengeFIAP.Infra.Repositories
             _dataBaseContext.ProdutoImagens.RemoveRange(_dataBaseContext.ProdutoImagens.Where(w => w.IdProduto == editProdutoDTO.Id));
             await _dataBaseContext.SaveChangesAsync();
 
-            var produtoImagensEntity = editProdutoDTO.EditProdutoImagensDTO.Select(x => new ProdutoImagensEntity()
+            if (editProdutoDTO.EditProdutoImagensDTO != null)
             {
-                IdProduto = x.Id,
-                Foto = x.Foto,
-            });
+                var produtoImagensEntity = editProdutoDTO.EditProdutoImagensDTO.Select(x => new ProdutoImagensEntity()
+                {
+                    IdProduto = (int)x.Id,
+                    Foto = x.Foto,
+                });
 
-            await _dataBaseContext.ProdutoImagens.AddRangeAsync(produtoImagensEntity);
+                await _dataBaseContext.ProdutoImagens.AddRangeAsync(produtoImagensEntity);
+            }
+          
             await _dataBaseContext.SaveChangesAsync();
 
             await transaction.CommitAsync();
@@ -132,13 +136,17 @@ namespace TechChallengeFIAP.Infra.Repositories
 
                 int idProdutoInsert = entity.Id;
 
-                var produtoImagens = createProdutoDTO.ProdutoImagens.Select(x => new ProdutoImagensEntity()
+                if (createProdutoDTO.ProdutoImagens != null)
                 {
-                    IdProduto = idProdutoInsert,
-                    Foto = x.Foto
-                });
+                    var produtoImagens = createProdutoDTO.ProdutoImagens.Select(x => new ProdutoImagensEntity()
+                    {
+                        IdProduto = idProdutoInsert,
+                        Foto = x.Foto
+                    });
 
-                await _dataBaseContext.AddRangeAsync(produtoImagens);
+                    await _dataBaseContext.AddRangeAsync(produtoImagens);
+                }
+
                 await _dataBaseContext.SaveChangesAsync();
 
                 await transaction.CommitAsync();

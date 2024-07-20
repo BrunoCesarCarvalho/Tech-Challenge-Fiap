@@ -21,7 +21,7 @@ namespace TechChallengeFIAP.Infra.Repositories
 
         public async Task<PagedResponse<List<PedidoDTO>>> GetAllAsync(PaginationFilter filter)
         {
-            var validFilter = new PaginationFilter(filter.PageNumber, filter.PageSize);
+            var validFilter = new PaginationFilter(filter.PageNumber, filter.PageSize, filter.PedidoId);
 
 
             var pedidos = await _dataBaseContext.Pedido
@@ -29,6 +29,7 @@ namespace TechChallengeFIAP.Infra.Repositories
                 .Include(w => w.StatusEtapa)
                 .Include(w => w.StatusPagamento)
                 .Include(w => w.PedidoProdutos)
+                .Where(w => w.Id == filter.PedidoId || w.Id > filter.PedidoId)
                 .Take(validFilter.PageSize)
                 .Skip((validFilter.PageNumber - 1) * validFilter.PageSize)
                 .OrderBy(o => o.Data)
@@ -45,7 +46,7 @@ namespace TechChallengeFIAP.Infra.Repositories
         {
             return pedidos.Select(x => new PedidoDTO()
             {
-                Id = x.Id,
+                PedidoId = x.Id,
                 Data = x.Data,
                 ValorTotal = x.ValorTotal,
                 QrData = x.QrData,
@@ -88,7 +89,7 @@ namespace TechChallengeFIAP.Infra.Repositories
 
             return new PedidoDTO()
             {
-                Id = pedido.Id,
+                PedidoId = pedido.Id,
                 Data = pedido.Data,
                 ValorTotal = pedido.ValorTotal,
                 QrData = pedido.QrData,
@@ -176,6 +177,28 @@ namespace TechChallengeFIAP.Infra.Repositories
             await _dataBaseContext.SaveChangesAsync();
         }
 
+        public async Task<PagedResponse<List<PedidoDTO>>> PedidosActive(PaginationFilter filter)
+        {
+            var validFilter = new PaginationFilter(filter.PageNumber, filter.PageSize, filter.PedidoId);
+
+            var pedidos = await _dataBaseContext.Pedido
+               .Include(w => w.Cliente)
+               .Include(w => w.StatusEtapa)
+               .Include(w => w.StatusPagamento)
+               .Include(w => w.PedidoProdutos)
+               .Where(w => w.StatusEtapa.Id != (int)EnumPedidoStatusEtapa.Finalizado)
+               .Take(validFilter.PageSize)
+               .Skip((validFilter.PageNumber - 1) * validFilter.PageSize)
+               .OrderBy(o => o.Data).ThenBy(o => o.StatusEtapa.Id)
+               .ToListAsync();
+
+            var totalRecords = await _dataBaseContext.Pedido.CountAsync();
+
+            var dadosResponse = ToPedidoListDTO(pedidos);
+
+            return new PagedResponse<List<PedidoDTO>>(dadosResponse, validFilter.PageNumber, validFilter.PageSize);
+
+        }
 
         protected virtual void Dispose(bool disposing)
         {

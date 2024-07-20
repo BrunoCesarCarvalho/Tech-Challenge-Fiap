@@ -37,14 +37,12 @@ namespace TechChallengeFIAP.Domain.Services
 
         public async Task DeleteAsync(int id)
         {
-            //var exist = await _produtoRepository.GetByIdAsync(id);
-            //if (exist != null)
-            //{
-            //    _produtoRepository.DeleteAsync(exist);
-            //}
-            //else throw new Exception("Produto não existe.");
-
-           await  _produtoRepository.DeleteAsync(id);
+            var produto = await _produtoRepository.GetByIdAsync(id);
+            if (produto != null)
+            {
+                await _produtoRepository.DeleteAsync(produto.Id);
+            }
+            else throw new Exception("Produto não existe.");          
         }
 
         public async Task<List<ProdutoDTO>> GetAllAsync()

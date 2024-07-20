@@ -8,6 +8,6 @@
         public string Descricao { get; set; }
         public decimal Valor { get; set; }
 
-        public List<EditProdutoImagensDTO> EditProdutoImagensDTO { get; set; }
+        public List<EditProdutoImagensDTO>? EditProdutoImagensDTO { get; set; }
     }
 }

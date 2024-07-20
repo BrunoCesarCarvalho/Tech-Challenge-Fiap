@@ -2,6 +2,6 @@
 {
     public class CreateClienteDTO
     {
-        public string Cpf { get; set; }
+        public string Cpf { get; set; }      
     }
 }

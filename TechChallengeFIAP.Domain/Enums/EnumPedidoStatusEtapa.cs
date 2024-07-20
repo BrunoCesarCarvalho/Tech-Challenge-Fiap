@@ -1,5 +1,10 @@
-﻿namespace TechChallengeFIAP.Domain.Enums
+﻿using System.ComponentModel;
+using TechChallengeFiap.Core.Helpers;
+
+namespace TechChallengeFIAP.Domain.Enums
 {
+
+    [TypeConverter(typeof(EnumTypeConverter<EnumPedidoStatusEtapa>))]
     public enum EnumPedidoStatusEtapa
     {
         Recebido = 1,

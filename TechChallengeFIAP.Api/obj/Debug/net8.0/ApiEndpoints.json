@@ -82,6 +82,11 @@
     "Order": 0,
     "Parameters": [
       {
+        "Name": "PedidoId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
         "Name": "PageNumber",
         "Type": "System.Int32",
         "IsRequired": false
@@ -97,7 +102,7 @@
   {
     "ContainingType": "TechChallengeFIAP.Api.Controllers.PedidoController",
     "Method": "ChangeStatusAsync",
-    "RelativePath": "api/Pedido/change-status/{id}/{idStatus}",
+    "RelativePath": "api/Pedido/change-status/{id}/{enumPedidoStatusEtapa}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -108,8 +113,8 @@
         "IsRequired": true
       },
       {
-        "Name": "idStatus",
-        "Type": "System.Int32",
+        "Name": "enumPedidoStatusEtapa",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
@@ -127,6 +132,32 @@
         "Name": "Id",
         "Type": "System.Int32",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TechChallengeFIAP.Api.Controllers.PedidoController",
+    "Method": "GetPedidoActive",
+    "RelativePath": "api/Pedido/pedido-active",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PedidoId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
