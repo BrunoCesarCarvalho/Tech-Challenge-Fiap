@@ -24,9 +24,9 @@ namespace TechChallengeFiap.Integrations.MercadoPagoFIAP.Services
             using (HttpClient client = new HttpClient())
             {
                 // URL da API
-                //string url = "https://api.mercadopago.com/users/157873729/stores";
+                //string url = "https://api.mercadopago.com/users/1795994429/stores";
 
-                string url = "https://api.mercadopago.com/instore/orders/qr/seller/collectors/157873729/pos/LojaFIAP1Caiax1/qrs";
+                string url = "https://api.mercadopago.com/instore/orders/qr/seller/collectors/1795994429/pos/Caixa_Vendedor/qrs";
 
                 // Cabeçalhos da requisição
                 client.DefaultRequestHeaders.Add("Authorization", "Bearer " + AccessToken);

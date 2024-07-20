@@ -90,7 +90,7 @@ namespace TechChallengeFIAP.Domain.Services
             payloadModel.total_amount = totalAmount;
             payloadModel.title = idClienteAvulso > 0 ? idClienteAvulso.ToString() : clienteDTO.Id.ToString();
             payloadModel.description = idClienteAvulso > 0 ? idClienteAvulso.ToString() : clienteDTO.Id.ToString();
-            payloadModel.notification_url = "https://hookb.in/9X9WQQmQ3puyw80KPddB";
+            payloadModel.notification_url = $"https://localhost:44319/api/Pedido/confirm-payment/{idPedido}";
 
             payloadModel.items = new List<ItemModel>();
 
@@ -120,12 +120,15 @@ namespace TechChallengeFIAP.Domain.Services
 
         public async Task<byte[]> GetQrCodeAsync(int IdPedido)
         {
-            var pedidoJaPago = await _pedidoRepository.GetByIdAsync(IdPedido);
-            if (pedidoJaPago != null && pedidoJaPago.StatusPagamento.Id == (int)EnumStatusPagamento.Pago)
-                throw new Exception("Pedido já foi pago");
-
             var pedido = await _pedidoRepository.GetByIdAsync(IdPedido);
-            return GenerateByteArray(pedido.QrData);
+            if (pedido != null)
+            {
+                if (pedido.StatusPagamento.Id == (int)EnumStatusPagamento.Pago)
+                    throw new Exception("Pedido já foi pago");
+                else
+                    return GenerateByteArray(pedido.QrData);
+            }
+            throw new Exception("Pedido not found.");
         }
 
         private byte[] GenerateByteArray(string url)
@@ -166,6 +169,7 @@ namespace TechChallengeFIAP.Domain.Services
 
         public async Task ConfirmPaymentAsync(int idPedido)
         {
+            _ = await _pedidoRepository.GetByIdAsync(idPedido) ?? throw new Exception("Pedido not found.");
             await _pedidoRepository.ConfirmPaymentAsync(idPedido);
         }
 

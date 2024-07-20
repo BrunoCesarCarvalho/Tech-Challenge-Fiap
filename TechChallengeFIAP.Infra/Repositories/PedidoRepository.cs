@@ -78,7 +78,7 @@ namespace TechChallengeFIAP.Infra.Repositories
             }).ToList();
         }
 
-        public async Task<PedidoDTO> GetByIdAsync(int IdPedido)
+        public async Task<PedidoDTO?> GetByIdAsync(int IdPedido)
         {
             var pedido = await _dataBaseContext.Pedido
                 .Include(w => w.Cliente)
@@ -87,7 +87,7 @@ namespace TechChallengeFIAP.Infra.Repositories
                 .Include(w => w.PedidoProdutos)
                 .FirstOrDefaultAsync(w => w.Id == IdPedido);
 
-            return new PedidoDTO()
+            return pedido != null ? new PedidoDTO()
             {
                 PedidoId = pedido.Id,
                 Data = pedido.Data,
@@ -116,7 +116,7 @@ namespace TechChallengeFIAP.Infra.Repositories
                     IdProduto = pp.IdProduto,
                     Quantidade = pp.Quantidade
                 }).ToList()
-            };
+            } : null;
         }
 
         public async Task<List<PedidoMercadoPagoDTO>> GetPedidoMercadoPago(int IdPedido)
