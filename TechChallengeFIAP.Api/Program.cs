@@ -14,6 +14,9 @@ builder.Services.ConfigurationInfra(builder.Configuration);
 builder.Services.ConfigurationDomain();
 builder.Services.ConfigurationCore();
 
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+builder.Logging.AddDebug();
 
 builder.Services.AddControllers();
 
@@ -51,6 +54,7 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 var app = builder.Build();
+
 
 app.UseHttpsRedirection();
 

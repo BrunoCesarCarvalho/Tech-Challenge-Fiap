@@ -96,5 +96,15 @@ namespace TechChallengeFIAP.Api.Controllers
             await _pedidoService.ConfirmPaymentAsync(Id);
             return StatusCode(StatusCodes.Status204NoContent);
         }
+
+        /// <summary>
+        /// Metodo que confirma o pagamento do cliente, o status fica como Pago no sistema
+        /// </summary>       
+        [HttpPut("confirm-payment/mercado-pago/{IdPedidoMercadoPago}")]
+        public async Task<IActionResult> ConfirmePaymentMercadoPagoAsync([FromRoute] string IdPedidoMercadoPago)
+        {
+            await _pedidoService.ConfirmePaymentMercadoPagoAsync(IdPedidoMercadoPago);
+            return StatusCode(StatusCodes.Status204NoContent);
+        }
     }
 }

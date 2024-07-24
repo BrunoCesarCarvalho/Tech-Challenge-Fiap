@@ -138,6 +138,22 @@
   },
   {
     "ContainingType": "TechChallengeFIAP.Api.Controllers.PedidoController",
+    "Method": "ConfirmePaymentMercadoPagoAsync",
+    "RelativePath": "api/Pedido/confirm-payment/mercado-pago/{IdPedidoMercadoPago}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "IdPedidoMercadoPago",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TechChallengeFIAP.Api.Controllers.PedidoController",
     "Method": "GetPedidoActive",
     "RelativePath": "api/Pedido/pedido-active",
     "HttpMethod": "GET",

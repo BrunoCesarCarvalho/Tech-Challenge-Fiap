@@ -10,7 +10,21 @@
 			"name": "Buscar Cliente",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://localhost:31000/api/Cliente/cpf/13134343703",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "31000",
+					"path": [
+						"api",
+						"Cliente",
+						"cpf",
+						"13134343703"
+					]
+				}
 			},
 			"response": []
 		},
@@ -21,7 +35,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"cpf\": \"03268903001\",\r\n  \"nome\": \"Ricardo Soares Nogueira\",\r\n  \"email\": \"ricardosn89@hotmail.com\",\r\n  \"dataNascimento\": \"1987-06-28\"\r\n}",
+					"raw": "{\r\n  \"cpf\": \"13134343703\",\r\n  \"nome\": \"Ricardo Soares Nogueira\",\r\n  \"email\": \"ricardosn89@hotmail.com\",\r\n  \"dataNascimento\": \"1987-06-28\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -29,12 +43,12 @@
 					}
 				},
 				"url": {
-					"raw": "https://localhost:44319/api/Cliente",
+					"raw": "https://localhost:31000/api/Cliente",
 					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "44319",
+					"port": "31000",
 					"path": [
 						"api",
 						"Cliente"
@@ -47,7 +61,20 @@
 			"name": "Promoções Clientes",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://localhost:31000/api/Cliente/promotions",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "31000",
+					"path": [
+						"api",
+						"Cliente",
+						"promotions"
+					]
+				}
 			},
 			"response": []
 		},
@@ -55,7 +82,20 @@
 			"name": "Buscar Todos Pedidos",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://localhost:31000/api/Pedido/all",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "31000",
+					"path": [
+						"api",
+						"Pedido",
+						"all"
+					]
+				}
 			},
 			"response": []
 		},
@@ -63,7 +103,20 @@
 			"name": "Buscar Pedidos Ativos",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://localhost:31000/api/Pedido/pedido-active",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "31000",
+					"path": [
+						"api",
+						"Pedido",
+						"pedido-active"
+					]
+				}
 			},
 			"response": []
 		},
@@ -74,7 +127,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{  \r\n  \"listPedidoProdutos\": [\r\n    {\r\n      \"idProduto\": 1,\r\n      \"quantidade\": 10\r\n    },\r\n {\r\n      \"idProduto\": 2,\r\n      \"quantidade\": 8\r\n    },\r\n {\r\n      \"idProduto\": 5,\r\n      \"quantidade\": 6\r\n    },\r\n {\r\n      \"idProduto\": 7,\r\n      \"quantidade\": 9\r\n    }\r\n  ]\r\n}",
+					"raw": "{  \r\n  \"listPedidoProdutos\": [\r\n    {\r\n      \"idProduto\": 56,\r\n      \"quantidade\": 10\r\n    },\r\n {\r\n      \"idProduto\": 53,\r\n      \"quantidade\": 8\r\n    },\r\n {\r\n      \"idProduto\": 54,\r\n      \"quantidade\": 6\r\n    },\r\n {\r\n      \"idProduto\": 55,\r\n      \"quantidade\": 9\r\n    }\r\n  ]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -82,12 +135,12 @@
 					}
 				},
 				"url": {
-					"raw": "https://localhost:44319/api/Pedido",
+					"raw": "https://localhost:31000/api/Pedido",
 					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "44319",
+					"port": "31000",
 					"path": [
 						"api",
 						"Pedido"
@@ -102,12 +155,12 @@
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "https://localhost:44319/api/Pedido/change-status/1/Finalizado",
+					"raw": "https://localhost:31000/api/Pedido/change-status/1/Finalizado",
 					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "44319",
+					"port": "31000",
 					"path": [
 						"api",
 						"Pedido",
@@ -123,7 +176,21 @@
 			"name": "Buscar QR Code",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://localhost:31000/api/Pedido/qr-code/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "31000",
+					"path": [
+						"api",
+						"Pedido",
+						"qr-code",
+						"1"
+					]
+				}
 			},
 			"response": []
 		},
@@ -133,12 +200,12 @@
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "https://localhost:44319/api/Pedido/confirm-payment/1",
+					"raw": "https://localhost:31000/api/Pedido/confirm-payment/1",
 					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "44319",
+					"port": "31000",
 					"path": [
 						"api",
 						"Pedido",
@@ -150,10 +217,46 @@
 			"response": []
 		},
 		{
+			"name": "Confirmar Pagamento Mercado Pago",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:31000/api/Pedido/confirm-payment/mercado-pago/7e538526-9971-4362-adec-529bfaa2d21f",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "31000",
+					"path": [
+						"api",
+						"Pedido",
+						"confirm-payment",
+						"mercado-pago",
+						"7e538526-9971-4362-adec-529bfaa2d21f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Buscar Todos Produtos",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://localhost:31000/api/Produto/all",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "31000",
+					"path": [
+						"api",
+						"Produto",
+						"all"
+					]
+				}
 			},
 			"response": []
 		},
@@ -172,12 +275,12 @@
 					}
 				},
 				"url": {
-					"raw": "https://localhost:44319/api/Produto",
+					"raw": "https://localhost:31000/api/Produto",
 					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "44319",
+					"port": "31000",
 					"path": [
 						"api",
 						"Produto"
@@ -193,7 +296,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "  {\r\n        \"id\": 52,\r\n        \"idCategoriaProduto\": 1,\r\n        \"nome\": \"Sardinha\",\r\n        \"descricao\": \"Sardinha com óleo e vegetais\",\r\n        \"valor\": 4.77\r\n    }",
+					"raw": "  {\r\n        \"id\": 52,\r\n        \"idCategoriaProduto\": 1,\r\n        \"nome\": \"Sardinha\",\r\n        \"descricao\": \"Sardinha com óleo e vegetais 2\",\r\n        \"valor\": 4.77\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -201,12 +304,12 @@
 					}
 				},
 				"url": {
-					"raw": "https://localhost:44319/api/Produto",
+					"raw": "https://localhost:31000/api/Produto",
 					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "44319",
+					"port": "31000",
 					"path": [
 						"api",
 						"Produto"
@@ -221,12 +324,12 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "https://localhost:44319/api/Produto?id=52",
+					"raw": "https://localhost:31000/api/Produto?id=53",
 					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "44319",
+					"port": "31000",
 					"path": [
 						"api",
 						"Produto"
@@ -234,7 +337,7 @@
 					"query": [
 						{
 							"key": "id",
-							"value": "52"
+							"value": "53"
 						}
 					]
 				}
@@ -245,7 +348,21 @@
 			"name": "Buscar Produto Por Id Categoria",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://localhost:31000/api/Produto/ListByIdCategoryAsync/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "31000",
+					"path": [
+						"api",
+						"Produto",
+						"ListByIdCategoryAsync",
+						"1"
+					]
+				}
 			},
 			"response": []
 		},
@@ -253,7 +370,21 @@
 			"name": "Buscar Produto Por Nome Categoria",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://localhost:31000/api/Produto/ListByNomeCategoryAsync/lanche",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "31000",
+					"path": [
+						"api",
+						"Produto",
+						"ListByNomeCategoryAsync",
+						"lanche"
+					]
+				}
 			},
 			"response": []
 		}

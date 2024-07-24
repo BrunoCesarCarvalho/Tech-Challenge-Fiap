@@ -1,4 +1,5 @@
-﻿using TechChallengeFIAP.Core.Paginetes;
+﻿using TechChallengeFiap.Integrations.MercadoPagoFIAP.Models;
+using TechChallengeFIAP.Core.Paginetes;
 using TechChallengeFIAP.Core.Responses;
 using TechChallengeFIAP.Domain.DTOs;
 
@@ -11,10 +12,13 @@ namespace TechChallengeFIAP.Domain.Interfaces.Repositories
         Task<PagedResponse<List<PedidoDTO>>> PedidosActive(PaginationFilter filter);
         Task<int> CreatePedidoAsync(CreatePedidoOnlyDTO createPedidoOnlyDTO);
         Task<List<PedidoMercadoPagoDTO>> GetPedidoMercadoPago(int IdPedido);
-        Task SaveQrDataAsync(string qrData, int idPedido);
+        Task SaveQrDataAsync(MercadoPagoQrCodeModel mercadoPagoQrCodeModel, int IdPedidoMercadoPago);
         Task<PedidoDTO> GetByIdAsync(int IdPedido);
-        Task ChangeStatusAsync(int idPedido, int idStatus);
+        Task ChangeStatusAsync(int IdPedidoMercadoPago, int idStatus);
 
-        Task ConfirmPaymentAsync(int idPedido);
+        Task ConfirmPaymentAsync(int IdPedidoMercadoPago);
+        Task ConfirmePaymentMercadoPagoAsync(string IdPedidoMercadoPago);
+
+        Task<PedidoDTO?> GetMercadoPagoByIdAsync(string IdPedidoMercadoPago);
     }
 }

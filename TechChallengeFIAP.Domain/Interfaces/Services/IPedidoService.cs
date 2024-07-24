@@ -14,5 +14,6 @@ namespace TechChallengeFIAP.Domain.Interfaces.Services
 
         Task ChangeStatusAsync(int idPedido, int idStatus);
         Task ConfirmPaymentAsync(int idPedido);
+        Task ConfirmePaymentMercadoPagoAsync(string IdPedidoMercadoPago);
     }
 }

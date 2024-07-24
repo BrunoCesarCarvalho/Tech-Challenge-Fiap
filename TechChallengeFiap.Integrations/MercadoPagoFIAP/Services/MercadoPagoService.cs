@@ -15,7 +15,7 @@ namespace TechChallengeFiap.Integrations.MercadoPagoFIAP.Services
 
         }
 
-        public async Task<string> CallQrCode(PayloadModel pedidoMercadoPagoDTO)
+        public async Task<MercadoPagoQrCodeModel> CallQrCode(PayloadModel pedidoMercadoPagoDTO)
         {
 
             var payload = JsonConvert.SerializeObject(pedidoMercadoPagoDTO, Formatting.Indented);
@@ -23,29 +23,25 @@ namespace TechChallengeFiap.Integrations.MercadoPagoFIAP.Services
 
             using (HttpClient client = new HttpClient())
             {
-                // URL da API
-                //string url = "https://api.mercadopago.com/users/1795994429/stores";
+                
 
-                string url = "https://api.mercadopago.com/instore/orders/qr/seller/collectors/1795994429/pos/Caixa_Vendedor/qrs";
+                //string url = "https://api.mercadopago.com/instore/orders/qr/seller/collectors/157873729/pos/LojaFIAP1Caiax1/qrs";
 
-                // Cabeçalhos da requisição
+              
                 client.DefaultRequestHeaders.Add("Authorization", "Bearer " + AccessToken);
-                //client.DefaultRequestHeaders.Add("Content-Type", "application/json");
-
-                // Corpo da requisição
+                              
                 HttpContent content = new StringContent(payload, Encoding.UTF8, "application/json");
+             
+                HttpResponseMessage response = await client.PostAsync(Url, content);
 
-                // Realiza a requisição POST
-                HttpResponseMessage response = await client.PostAsync(url, content);
-
-                // Verifica se a requisição foi bem sucedida
+              
                 if (response.IsSuccessStatusCode)
                 {
-                    // Exibe a resposta
+                    
                     string responseBody = await response.Content.ReadAsStringAsync();
 
-                    MercadoPagoQrCodeModel mercadoPagoQrCode = JsonConvert.DeserializeObject<MercadoPagoQrCodeModel>(responseBody);
-                    return mercadoPagoQrCode.qr_data;
+                    var mercadoPagoQrCode = JsonConvert.DeserializeObject<MercadoPagoQrCodeModel>(responseBody);
+                    return mercadoPagoQrCode;
                 }
                 string responseBodyBadRequest = await response.Content.ReadAsStringAsync();
                 throw new Exception("Exception: " + responseBodyBadRequest);

@@ -40,9 +40,13 @@ namespace TechChallengeFIAP.Domain.Services
             var produto = await _produtoRepository.GetByIdAsync(id);
             if (produto != null)
             {
+                var exist = await _produtoRepository.GetProductWithPedido(id);
+                if (exist)
+                    throw new Exception("Produto com Pedido Ativo.");
+
                 await _produtoRepository.DeleteAsync(produto.Id);
             }
-            else throw new Exception("Produto não existe.");          
+            else throw new Exception("Produto não existe.");
         }
 
         public async Task<List<ProdutoDTO>> GetAllAsync()

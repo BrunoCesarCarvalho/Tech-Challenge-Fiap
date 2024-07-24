@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
 using TechChallengeFIAP.Domain.DTOs;
 using TechChallengeFIAP.Domain.Interfaces.Repositories;
 using TechChallengeFIAP.Infra.Context;
@@ -13,6 +14,11 @@ namespace TechChallengeFIAP.Infra.Repositories
         public ProdutoRepository(DataBaseContext dataBaseContext)
         {
             _dataBaseContext = dataBaseContext;
+        }
+
+        public async Task<bool> GetProductWithPedido(int idProduto)
+        {
+            return await _dataBaseContext.PedidoProdutos.AnyAsync(p => p.IdProduto == idProduto);
         }
 
         public async Task<List<ProdutoDTO>> GetAll()

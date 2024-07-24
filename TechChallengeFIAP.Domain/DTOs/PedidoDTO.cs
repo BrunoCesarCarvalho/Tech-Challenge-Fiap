@@ -2,9 +2,10 @@
 {
     public class PedidoDTO
     {
-        public int PedidoId { get; set; }
-        public DateTime Data { get; set; }
-        public decimal ValorTotal { get; set; }
+        public int? PedidoId { get; set; }
+        public string? PedidoIdMercadoPago { get; set; }
+        public DateTime? Data { get; set; }
+        public decimal? ValorTotal { get; set; }
 
         public string QrData {get; set; }
         public ClienteDTO Cliente { get; set; }

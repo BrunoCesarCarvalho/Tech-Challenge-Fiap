@@ -1,5 +1,6 @@
 USE [master]
 GO
+
 /****** Object:  Database [TechChallengeFIAP]    Script Date: 23/05/2024 22:54:33 ******/
 CREATE DATABASE [TechChallengeFIAP]
 
@@ -121,6 +122,7 @@ CREATE TABLE [dbo].[Pedido](
 	[IdStatusPagamento] [int] NOT NULL,
 	[ValorTotal] [decimal](18, 2) NOT NULL,
 	[QrData] [varchar](max) NULL,
+	[IdPedidoMercadoPago] [varchar](max) NULL,
  CONSTRAINT [PK_Pedido] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC

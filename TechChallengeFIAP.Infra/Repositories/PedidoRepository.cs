@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using TechChallengeFiap.Integrations.MercadoPagoFIAP.Models;
 using TechChallengeFIAP.Core.Paginetes;
 using TechChallengeFIAP.Core.Responses;
 using TechChallengeFIAP.Domain.DTOs;
@@ -21,25 +22,31 @@ namespace TechChallengeFIAP.Infra.Repositories
 
         public async Task<PagedResponse<List<PedidoDTO>>> GetAllAsync(PaginationFilter filter)
         {
-            var validFilter = new PaginationFilter(filter.PageNumber, filter.PageSize, filter.PedidoId);
+            try
+            {
+                var validFilter = new PaginationFilter(filter.PageNumber, filter.PageSize, filter.PedidoId);
 
+                var pedidos = await _dataBaseContext.Pedido
+                    .Include(w => w.Cliente)
+                    .Include(w => w.StatusEtapa)
+                    .Include(w => w.StatusPagamento)
+                    .Include(w => w.PedidoProdutos)
+                    .Where(w => w.Id == filter.PedidoId || w.Id > filter.PedidoId)
+                    .Skip((validFilter.PageNumber - 1) * validFilter.PageSize)
+                    .Take(validFilter.PageSize)
+                    .OrderBy(o => o.Data)
+                    .ToListAsync();
 
-            var pedidos = await _dataBaseContext.Pedido
-                .Include(w => w.Cliente)
-                .Include(w => w.StatusEtapa)
-                .Include(w => w.StatusPagamento)
-                .Include(w => w.PedidoProdutos)
-                .Where(w => w.Id == filter.PedidoId || w.Id > filter.PedidoId)
-                .Take(validFilter.PageSize)
-                .Skip((validFilter.PageNumber - 1) * validFilter.PageSize)
-                .OrderBy(o => o.Data)
-                .ToListAsync();
+                var totalRecords = await _dataBaseContext.Pedido.CountAsync();
 
-            var totalRecords = await _dataBaseContext.Pedido.CountAsync();
+                var dadosResponse = ToPedidoListDTO(pedidos);
 
-            var dadosResponse = ToPedidoListDTO(pedidos);
-
-            return new PagedResponse<List<PedidoDTO>>(dadosResponse, validFilter.PageNumber, validFilter.PageSize);
+                return new PagedResponse<List<PedidoDTO>>(dadosResponse, validFilter.PageNumber, validFilter.PageSize);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
         private static List<PedidoDTO> ToPedidoListDTO(List<PedidoEntity> pedidos)
@@ -47,6 +54,7 @@ namespace TechChallengeFIAP.Infra.Repositories
             return pedidos.Select(x => new PedidoDTO()
             {
                 PedidoId = x.Id,
+                PedidoIdMercadoPago = x.IdPedidoMercadoPago,
                 Data = x.Data,
                 ValorTotal = x.ValorTotal,
                 QrData = x.QrData,
@@ -76,6 +84,7 @@ namespace TechChallengeFIAP.Infra.Repositories
                 }).ToList()
 
             }).ToList();
+
         }
 
         public async Task<PedidoDTO?> GetByIdAsync(int IdPedido)
@@ -90,6 +99,49 @@ namespace TechChallengeFIAP.Infra.Repositories
             return pedido != null ? new PedidoDTO()
             {
                 PedidoId = pedido.Id,
+                PedidoIdMercadoPago = pedido.IdPedidoMercadoPago,
+                Data = pedido.Data,
+                ValorTotal = pedido.ValorTotal,
+                QrData = pedido.QrData,
+                Cliente = new ClienteDTO()
+                {
+                    Id = pedido.Cliente.Id,
+                    Cpf = pedido.Cliente.Cpf,
+                    Email = pedido.Cliente.Email,
+                    Nome = pedido.Cliente.Nome
+                },
+                StatusEtapa = new PedidoStatusEtapaDTO()
+                {
+                    Id = pedido.StatusEtapa.Id,
+                    Descricao = pedido.StatusEtapa.Descricao
+                },
+                StatusPagamento = new StatusPagamentoDTO()
+                {
+                    Id = pedido.StatusPagamento.Id,
+                    Descricao = pedido.StatusPagamento.Descricao
+                },
+                PedidoProdutos = pedido.PedidoProdutos.Select(pp => new PedidoProdutosDTO()
+                {
+                    Id = pp.Id,
+                    IdProduto = pp.IdProduto,
+                    Quantidade = pp.Quantidade
+                }).ToList()
+            } : null;
+        }
+
+        public async Task<PedidoDTO?> GetMercadoPagoByIdAsync(string IdPedidoMercadoPago)
+        {
+            var pedido = await _dataBaseContext.Pedido
+                .Include(w => w.Cliente)
+                .Include(w => w.StatusEtapa)
+                .Include(w => w.StatusPagamento)
+                .Include(w => w.PedidoProdutos)
+                .FirstOrDefaultAsync(w => w.IdPedidoMercadoPago == IdPedidoMercadoPago);
+
+            return pedido != null ? new PedidoDTO()
+            {
+                PedidoId = pedido.Id,
+                PedidoIdMercadoPago = pedido.IdPedidoMercadoPago,
                 Data = pedido.Data,
                 ValorTotal = pedido.ValorTotal,
                 QrData = pedido.QrData,
@@ -155,10 +207,11 @@ namespace TechChallengeFIAP.Infra.Repositories
             return entity.Id;
         }
 
-        public async Task SaveQrDataAsync(string qrData, int idPedido)
+        public async Task SaveQrDataAsync(MercadoPagoQrCodeModel mercadoPagoQrCodeModel, int idPedido)
         {
             var entity = await _dataBaseContext.Pedido.FirstOrDefaultAsync(w => w.Id == idPedido);
-            entity.QrData = qrData;
+            entity.QrData = mercadoPagoQrCodeModel.qr_data;
+            entity.IdPedidoMercadoPago = mercadoPagoQrCodeModel.in_store_order_id;
 
             await _dataBaseContext.SaveChangesAsync();
         }
@@ -173,6 +226,12 @@ namespace TechChallengeFIAP.Infra.Repositories
         public async Task ConfirmPaymentAsync(int idPedido)
         {
             var entity = await _dataBaseContext.Pedido.FirstOrDefaultAsync(w => w.Id == idPedido);
+            entity.IdStatusPagamento = (int)EnumStatusPagamento.Pago;
+            await _dataBaseContext.SaveChangesAsync();
+        }
+        public async Task ConfirmePaymentMercadoPagoAsync(string IdPedidoMercadoPago)
+        {
+            var entity = await _dataBaseContext.Pedido.FirstOrDefaultAsync(w => w.IdPedidoMercadoPago == IdPedidoMercadoPago);
             entity.IdStatusPagamento = (int)EnumStatusPagamento.Pago;
             await _dataBaseContext.SaveChangesAsync();
         }

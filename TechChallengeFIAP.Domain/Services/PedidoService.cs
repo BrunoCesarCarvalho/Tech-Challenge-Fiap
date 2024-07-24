@@ -67,6 +67,22 @@ namespace TechChallengeFIAP.Domain.Services
 
             var idPedido = await _pedidoRepository.CreatePedidoAsync(createPedidoOnlyDTO);
 
+            var listCreatePedidoProdutosOnlyDTO = CreatePedidoProdutosDTO(createPedidoDTO, idPedido);
+
+            await _pedidoProdutosRepository.CreateAsync(listCreatePedidoProdutosOnlyDTO);
+
+            var pedidoMercadoPago = await _pedidoRepository.GetPedidoMercadoPago(idPedido);
+
+            var payloadModel = CreateObjectMercadoPago(idClienteAvulso, clienteDTO, totalAmount, idPedido, pedidoMercadoPago);
+
+            var mercadoPagoQrCodeModel = await _mercadoPagoService.CallQrCode(payloadModel);
+            await _pedidoRepository.SaveQrDataAsync(mercadoPagoQrCodeModel, idPedido);
+
+            return idPedido;
+        }
+
+        private static List<CreatePedidoProdutosOnlyDTO> CreatePedidoProdutosDTO(CreatePedidoDTO createPedidoDTO, int idPedido)
+        {
             var listCreatePedidoProdutosOnlyDTO = new List<CreatePedidoProdutosOnlyDTO>();
 
             foreach (var pedidosProdutos in createPedidoDTO.ListPedidoProdutos)
@@ -76,21 +92,23 @@ namespace TechChallengeFIAP.Domain.Services
                     IdPedido = idPedido,
                     IdProduto = pedidosProdutos.IdProduto,
                     Quantidade = pedidosProdutos.Quantidade,
+                    
                 };
 
                 listCreatePedidoProdutosOnlyDTO.Add(createPedidoProdutosOnlyDTO);
             }
 
-            await _pedidoProdutosRepository.CreateAsync(listCreatePedidoProdutosOnlyDTO);
+            return listCreatePedidoProdutosOnlyDTO;
+        }
 
-            var pedidoMercadoPago = await _pedidoRepository.GetPedidoMercadoPago(idPedido);
-
+        private static PayloadModel CreateObjectMercadoPago(int idClienteAvulso, ClienteDTO? clienteDTO, decimal totalAmount, int idPedido, List<PedidoMercadoPagoDTO> pedidoMercadoPago)
+        {
             var payloadModel = new PayloadModel();
             payloadModel.external_reference = idPedido.ToString();
             payloadModel.total_amount = totalAmount;
             payloadModel.title = idClienteAvulso > 0 ? idClienteAvulso.ToString() : clienteDTO.Id.ToString();
             payloadModel.description = idClienteAvulso > 0 ? idClienteAvulso.ToString() : clienteDTO.Id.ToString();
-            payloadModel.notification_url = $"https://localhost:44319/api/Pedido/confirm-payment/{idPedido}";
+            payloadModel.notification_url = $"https://hookb.in/9X9WQQmQ3puyw80KPddB";
 
             payloadModel.items = new List<ItemModel>();
 
@@ -112,10 +130,7 @@ namespace TechChallengeFIAP.Domain.Services
                 payloadModel.items.Add(item);
             }
 
-            var qrData = await _mercadoPagoService.CallQrCode(payloadModel);
-            await _pedidoRepository.SaveQrDataAsync(qrData, idPedido);
-
-            return idPedido;
+            return payloadModel;
         }
 
         public async Task<byte[]> GetQrCodeAsync(int IdPedido)
@@ -171,6 +186,12 @@ namespace TechChallengeFIAP.Domain.Services
         {
             _ = await _pedidoRepository.GetByIdAsync(idPedido) ?? throw new Exception("Pedido not found.");
             await _pedidoRepository.ConfirmPaymentAsync(idPedido);
+        }
+
+        public async Task ConfirmePaymentMercadoPagoAsync(string IdPedidoMercadoPago)
+        {
+            _ = await _pedidoRepository.GetMercadoPagoByIdAsync(IdPedidoMercadoPago) ?? throw new Exception("Pedido not found.");
+            await _pedidoRepository.ConfirmePaymentMercadoPagoAsync(IdPedidoMercadoPago);
         }
 
         public async Task<PagedResponse<List<PedidoDTO>>> PedidosActive(PaginationFilter filter)
