@@ -2,6 +2,22 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "AutoMapper/13.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Azure.Core/1.35.0": {
         "type": "package",
         "dependencies": {
@@ -1351,6 +1367,7 @@
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.1",
           "QRCoder": "1.4.1",
+          "TechChallengeFIAP.DTOs": "1.0.0",
           "TechChallengeFiap.Core": "1.0.0",
           "TechChallengeFiap.Integrations": "1.0.0"
         },
@@ -1361,12 +1378,39 @@
           "bin/placeholder/TechChallengeFIAP.Domain.dll": {}
         }
       },
+      "TechChallengeFIAP.DTOs/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "TechChallengeFIAP.Enums": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TechChallengeFIAP.DTOs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TechChallengeFIAP.DTOs.dll": {}
+        }
+      },
+      "TechChallengeFIAP.Enums/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "TechChallengeFiap.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TechChallengeFIAP.Enums.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TechChallengeFIAP.Enums.dll": {}
+        }
+      },
       "TechChallengeFIAP.Infra/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "8.0.4",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.4",
+          "TechChallengeFIAP.DTOs": "1.0.0",
           "TechChallengeFIAP.Domain": "1.0.0",
           "TechChallengeFiap.Core": "1.0.0"
         },
@@ -1386,6 +1430,7 @@
           "Microsoft.Extensions.Configuration.Json": "8.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.1",
           "Newtonsoft.Json": "13.0.3",
+          "TechChallengeFIAP.Enums": "1.0.0",
           "mercadopago-sdk": "2.3.8"
         },
         "compile": {
@@ -1398,6 +1443,21 @@
     }
   },
   "libraries": {
+    "AutoMapper/13.0.1": {
+      "sha512": "/Fx1SbJ16qS7dU4i604Sle+U9VLX+WSNVJggk6MupKVkYvvBm4XqYaeFuf67diHefHKHs50uQIS2YEDFhPCakQ==",
+      "type": "package",
+      "path": "automapper/13.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.13.0.1.nupkg.sha512",
+        "automapper.nuspec",
+        "icon.png",
+        "lib/net6.0/AutoMapper.dll",
+        "lib/net6.0/AutoMapper.xml"
+      ]
+    },
     "Azure.Core/1.35.0": {
       "sha512": "hENcx03Jyuqv05F4RBEPbxz29UrM3Nbhnr6Wl6NQpoU9BCIbL3XLentrxDCTrH54NLS11Exxi/o8MYgT/cnKFA==",
       "type": "package",
@@ -3955,6 +4015,16 @@
       "path": "../TechChallengeFIAP.Domain/TechChallengeFIAP.Domain.csproj",
       "msbuildProject": "../TechChallengeFIAP.Domain/TechChallengeFIAP.Domain.csproj"
     },
+    "TechChallengeFIAP.DTOs/1.0.0": {
+      "type": "project",
+      "path": "../TechChallengeFIAP.DTOs/TechChallengeFIAP.DTOs.csproj",
+      "msbuildProject": "../TechChallengeFIAP.DTOs/TechChallengeFIAP.DTOs.csproj"
+    },
+    "TechChallengeFIAP.Enums/1.0.0": {
+      "type": "project",
+      "path": "../TechChallengeFIAP.Enums/TechChallengeFIAP.Enums.csproj",
+      "msbuildProject": "../TechChallengeFIAP.Enums/TechChallengeFIAP.Enums.csproj"
+    },
     "TechChallengeFIAP.Infra/1.0.0": {
       "type": "project",
       "path": "../TechChallengeFIAP.Infra/TechChallengeFIAP.Infra.csproj",
@@ -3968,6 +4038,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "AutoMapper >= 13.0.1",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.20.0",
       "Swashbuckle.AspNetCore >= 6.4.0",
       "TechChallengeFIAP.Domain >= 1.0.0",
@@ -4033,6 +4104,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "AutoMapper": {
+            "target": "Package",
+            "version": "[13.0.1, )"
+          },
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
             "target": "Package",
             "version": "[1.20.0, )"
@@ -4061,7 +4136,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

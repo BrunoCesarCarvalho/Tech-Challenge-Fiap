@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TechChallengeFIAP.Domain.DTOs;
-using TechChallengeFIAP.Domain.Interfaces.Services;
+using TechChallengeFIAP.Domain.InterfacesUserCases.Services;
+using TechChallengeFIAP.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -11,9 +11,9 @@ namespace TechChallengeFIAP.Api.Controllers
     public class ClienteController : ControllerBase
     {
 
-        private readonly IClienteService _clienteService;
+        private readonly IClienteUserCase _clienteService;
 
-        public ClienteController(IClienteService clienteService)
+        public ClienteController(IClienteUserCase clienteService)
         {
             _clienteService = clienteService;
         }
@@ -41,7 +41,7 @@ namespace TechChallengeFIAP.Api.Controllers
         /// </summary>
         /// <returns>Retorna o ID do cliente criado</returns>
         [HttpPost]
-        public async Task<IActionResult> CreateAsync([FromBody] ClienteCadastroDTO clienteCadastroDTO)
+        public async Task<IActionResult> CreateAsync([FromBody] ClienteCadastroModel clienteCadastroDTO)
         {
             await _clienteService.CreateAsync(clienteCadastroDTO);
             return StatusCode(StatusCodes.Status201Created);

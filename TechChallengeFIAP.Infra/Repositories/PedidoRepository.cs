@@ -2,9 +2,9 @@
 using TechChallengeFiap.Integrations.MercadoPagoFIAP.Models;
 using TechChallengeFIAP.Core.Paginetes;
 using TechChallengeFIAP.Core.Responses;
-using TechChallengeFIAP.Domain.DTOs;
-using TechChallengeFIAP.Domain.Enums;
-using TechChallengeFIAP.Domain.Interfaces.Repositories;
+using TechChallengeFIAP.Domain.InterfacesUserCases.Repositories;
+using TechChallengeFIAP.DTOs;
+using TechChallengeFIAP.Enums;
 using TechChallengeFIAP.Infra.Context;
 using TechChallengeFIAP.Infra.Entities;
 
@@ -94,6 +94,7 @@ namespace TechChallengeFIAP.Infra.Repositories
                 .Include(w => w.StatusEtapa)
                 .Include(w => w.StatusPagamento)
                 .Include(w => w.PedidoProdutos)
+                .Include(w => w.PedidoProdutos.Select(s => s.Produto))
                 .FirstOrDefaultAsync(w => w.Id == IdPedido);
 
             return pedido != null ? new PedidoDTO()
@@ -124,8 +125,15 @@ namespace TechChallengeFIAP.Infra.Repositories
                 {
                     Id = pp.Id,
                     IdProduto = pp.IdProduto,
-                    Quantidade = pp.Quantidade
-                }).ToList()
+                    Quantidade = pp.Quantidade,
+                    Produto = new ProdutoDTO()
+                    {
+                        Nome = pp.Produto.Nome,
+                        Valor = pp.Produto.Valor,
+                    }
+                }
+
+                ).ToList()
             } : null;
         }
 
@@ -199,6 +207,7 @@ namespace TechChallengeFIAP.Infra.Repositories
                 IdStatusEtapa = createPedidoOnlyDTO.IdStatusEtapa,
                 IdStatusPagamento = createPedidoOnlyDTO.IdStatusPagamento,
                 ValorTotal = createPedidoOnlyDTO.ValorTotal,
+                IdTipoGatewayPagamento = (int)createPedidoOnlyDTO.EnumTipoGatewayPagamento,
             };
 
             await _dataBaseContext.Pedido.AddAsync(entity);
@@ -207,7 +216,7 @@ namespace TechChallengeFIAP.Infra.Repositories
             return entity.Id;
         }
 
-        public async Task SaveQrDataAsync(MercadoPagoQrCodeModel mercadoPagoQrCodeModel, int idPedido)
+        public async Task SaveQrCodeAsync(MercadoPagoQrCodeModel mercadoPagoQrCodeModel, int idPedido)
         {
             var entity = await _dataBaseContext.Pedido.FirstOrDefaultAsync(w => w.Id == idPedido);
             entity.QrData = mercadoPagoQrCodeModel.qr_data;

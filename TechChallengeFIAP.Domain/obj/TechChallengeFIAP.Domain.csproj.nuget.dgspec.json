@@ -80,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -116,6 +116,9 @@
             "projectReferences": {
               "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\Tech-Challenge-Fiap.Core\\TechChallengeFiap.Core.csproj": {
                 "projectPath": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\Tech-Challenge-Fiap.Core\\TechChallengeFiap.Core.csproj"
+              },
+              "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.DTOs\\TechChallengeFIAP.DTOs.csproj": {
+                "projectPath": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.DTOs\\TechChallengeFIAP.DTOs.csproj"
               },
               "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFiap.Integrations\\TechChallengeFiap.Integrations.csproj": {
                 "projectPath": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFiap.Integrations\\TechChallengeFiap.Integrations.csproj"
@@ -163,7 +166,147 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.304/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.DTOs\\TechChallengeFIAP.DTOs.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.DTOs\\TechChallengeFIAP.DTOs.csproj",
+        "projectName": "TechChallengeFIAP.DTOs",
+        "projectPath": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.DTOs\\TechChallengeFIAP.DTOs.csproj",
+        "packagesPath": "C:\\Users\\ricar\\.nuget\\packages\\",
+        "outputPath": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.DTOs\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ricar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Enums\\TechChallengeFIAP.Enums.csproj": {
+                "projectPath": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Enums\\TechChallengeFIAP.Enums.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.304/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Enums\\TechChallengeFIAP.Enums.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Enums\\TechChallengeFIAP.Enums.csproj",
+        "projectName": "TechChallengeFIAP.Enums",
+        "projectPath": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Enums\\TechChallengeFIAP.Enums.csproj",
+        "packagesPath": "C:\\Users\\ricar\\.nuget\\packages\\",
+        "outputPath": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Enums\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ricar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\Tech-Challenge-Fiap.Core\\TechChallengeFiap.Core.csproj": {
+                "projectPath": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\Tech-Challenge-Fiap.Core\\TechChallengeFiap.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -196,7 +339,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Enums\\TechChallengeFIAP.Enums.csproj": {
+                "projectPath": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Enums\\TechChallengeFIAP.Enums.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -255,7 +402,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

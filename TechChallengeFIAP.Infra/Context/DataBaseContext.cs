@@ -19,6 +19,7 @@ namespace TechChallengeFIAP.Infra.Context
         public DbSet<PedidoStatusEtapaEntity> PedidoStatusEtapa { get; set; }
         public DbSet<ProdutoImagensEntity> ProdutoImagens { get; set; }
         public DbSet<StatusPagamentoEntity> StatusPagamento { get; set; }
+        public DbSet<TipoGatewayPagamentoEntity> TipoGatewayPagamentos { get; set; }
         
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

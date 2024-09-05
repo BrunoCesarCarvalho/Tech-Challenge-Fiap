@@ -4,6 +4,6 @@ namespace TechChallengeFiap.Integrations.MercadoPagoFIAP.Interfaces
 {
     public interface IMercadoPagoService
     {
-        Task<MercadoPagoQrCodeModel> CallQrCode(PayloadModel payloadModel);
+        Task<MercadoPagoQrCodeModel> GenerateQrCode(PayloadModel payloadModel);
     }
 }

@@ -1,8 +1,10 @@
 ﻿using Microsoft.Extensions.Configuration;
+using TechChallengeFiap.Integrations.Abstracts;
+using TechChallengeFiap.Integrations.MercadoPagoFIAP.Models;
 
 namespace TechChallengeFiap.Integrations.MercadoPagoFIAP.Abstracts
 {
-    public abstract class MercadoPagoAbstract
+    public abstract class MercadoPagoAbstract : PagamentoAbstract
     {
         //private readonly IConfiguration _configuration;
         public readonly string Url = null;
@@ -20,5 +22,8 @@ namespace TechChallengeFiap.Integrations.MercadoPagoFIAP.Abstracts
             PublicKey = _configuration["Integracao:MercadoPago:PublicKey"];
             Url = _configuration["Integracao:MercadoPago:Url"];
         }
+
+        public abstract Task<MercadoPagoQrCodeModel> GenerateQrCode(PayloadModel pedidoMercadoPagoDTO);       
+
     }
 }

@@ -14,10 +14,13 @@ namespace TechChallengeFIAP.Infra.Entities
         public string? QrData { get; set; }
         public string? IdPedidoMercadoPago { get; set; }
 
+        public int IdTipoGatewayPagamento { get; set; }
+
         public ClienteEntity Cliente { get; set; }
         public PedidoStatusEtapaEntity StatusEtapa { get; set; }
         public StatusPagamentoEntity StatusPagamento { get; set; }
         public ICollection<PedidoProdutosEntity> PedidoProdutos { get; set; }
+        public TipoGatewayPagamentoEntity TipoGatewayPagamentoEntity { get; set; }
 
     }
 }

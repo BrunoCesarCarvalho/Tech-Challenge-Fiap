@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TechChallengeFIAP.Domain.DTOs;
-using TechChallengeFIAP.Domain.Interfaces.Services;
+using TechChallengeFIAP.Domain.InterfacesUserCases.Services;
+using TechChallengeFIAP.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -11,9 +11,9 @@ namespace TechChallengeFIAP.Api.Controllers
     public class ProdutoController : ControllerBase
     {
         
-        private readonly IProdutoService _produtoService;
+        private readonly IProdutoUserCase _produtoService;
 
-        public ProdutoController(IProdutoService produtoService)
+        public ProdutoController(IProdutoUserCase produtoService)
         {
             _produtoService = produtoService;
         }
@@ -33,7 +33,7 @@ namespace TechChallengeFIAP.Api.Controllers
         /// Metodo que cria um produto no sistema
         /// </summary>        
         [HttpPost]
-        public async Task<IActionResult> CreateAsync([FromBody] CreateProdutoDTO produtoDTO)
+        public async Task<IActionResult> CreateAsync([FromBody] CreateProdutoModel produtoDTO)
         {
             //var foto = System.IO.File.ReadAllBytes(@"C:\\Users\\ricar\\Pictures\\Screenshots\\Screenshot 2023-03-11 221322.png");          
             await _produtoService.CreateAsync(produtoDTO);
@@ -45,7 +45,7 @@ namespace TechChallengeFIAP.Api.Controllers
         /// Metodo que edita um produto no sistema
         /// </summary>      
         [HttpPut]
-        public async Task<IActionResult> EditAsync([FromBody] EditProdutoDTO editProdutoDTO)
+        public async Task<IActionResult> EditAsync([FromBody] EditProdutoModel editProdutoDTO)
         {
             await _produtoService.EditAsync(editProdutoDTO);
             return StatusCode(StatusCodes.Status204NoContent);

@@ -1,5 +1,5 @@
-﻿using TechChallengeFIAP.Domain.DTOs;
-using TechChallengeFIAP.Domain.Interfaces.Repositories;
+﻿using TechChallengeFIAP.Domain.InterfacesUserCases.Repositories;
+using TechChallengeFIAP.DTOs;
 using TechChallengeFIAP.Infra.Context;
 using TechChallengeFIAP.Infra.Entities;
 

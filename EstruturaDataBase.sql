@@ -112,6 +112,14 @@ GO
 /****** Object:  Table [dbo].[Pedido]    Script Date: 23/05/2024 22:54:33 ******/
 SET ANSI_NULLS ON
 GO
+
+CREATE TABLE [dbo].[TipoGatewayPagamento]
+(
+   [Id] [int] IDENTITY(1,1) NOT NULL,
+   [IdTipo] [int] NOT NULL,
+   [Descricao] VARCHAR(50) NOT NULL
+)
+
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Pedido](
@@ -120,9 +128,10 @@ CREATE TABLE [dbo].[Pedido](
 	[IdCliente] [int] NOT NULL,
 	[IdStatusEtapa] [int] NULL,
 	[IdStatusPagamento] [int] NOT NULL,
+	[IdTipoGatewayPagamento] [int] NOT NULL,
 	[ValorTotal] [decimal](18, 2) NOT NULL,
 	[QrData] [varchar](max) NULL,
-	[IdPedidoMercadoPago] [varchar](max) NULL,
+	[IdPedidoExternal] [varchar](max) NULL,
  CONSTRAINT [PK_Pedido] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -217,6 +226,11 @@ ALTER TABLE [dbo].[Pedido] CHECK CONSTRAINT [FK__Pedido__IdStatus__48CFD27E]
 GO
 ALTER TABLE [dbo].[Pedido]  WITH CHECK ADD  CONSTRAINT [FK__Pedido__IdStatus__4E88ABD4] FOREIGN KEY([IdStatusPagamento])
 REFERENCES [dbo].[StatusPagamento] ([Id])
+
+GO
+ALTER TABLE [dbo].[Pedido]  WITH CHECK ADD FOREIGN KEY([IdTipoGatewayPagamento])
+REFERENCES [dbo].[TipoGatewayPagamento] ([Id])
+
 GO
 ALTER TABLE [dbo].[Pedido] CHECK CONSTRAINT [FK__Pedido__IdStatus__4E88ABD4]
 GO
@@ -340,3 +354,10 @@ BEGIN
 
     SET @i = @i + 1;
 END
+
+GO
+insert into TipoGatewayPagamento(IdTipo, Descricao)
+values(1,'MercadoPago')
+GO
+insert into TipoGatewayPagamento(IdTipo, Descricao)
+values(2,'Paypal')

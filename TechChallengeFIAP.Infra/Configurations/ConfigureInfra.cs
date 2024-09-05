@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using TechChallengeFIAP.Domain.Interfaces.Repositories;
+using TechChallengeFIAP.Domain.InterfacesUserCases.Repositories;
 using TechChallengeFIAP.Infra.Context;
 using TechChallengeFIAP.Infra.Repositories;
 

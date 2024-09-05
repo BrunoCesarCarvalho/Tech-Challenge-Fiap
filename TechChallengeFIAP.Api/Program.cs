@@ -2,6 +2,7 @@ using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Converters;
 using System.Reflection;
+using TechChallengeFIAP.Api.Configurations;
 using TechChallengeFIAP.Core.Configurations;
 using TechChallengeFIAP.Domain.Configurations;
 using TechChallengeFIAP.Domain.Enums;
@@ -13,6 +14,7 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.ConfigurationInfra(builder.Configuration);
 builder.Services.ConfigurationDomain();
 builder.Services.ConfigurationCore();
+builder.Services.ConfigurationAutoMappings();
 
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();

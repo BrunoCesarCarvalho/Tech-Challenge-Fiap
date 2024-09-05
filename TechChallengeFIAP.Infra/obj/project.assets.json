@@ -1257,6 +1257,7 @@
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.1",
           "QRCoder": "1.4.1",
+          "TechChallengeFIAP.DTOs": "1.0.0",
           "TechChallengeFiap.Core": "1.0.0",
           "TechChallengeFiap.Integrations": "1.0.0"
         },
@@ -1265,6 +1266,32 @@
         },
         "runtime": {
           "bin/placeholder/TechChallengeFIAP.Domain.dll": {}
+        }
+      },
+      "TechChallengeFIAP.DTOs/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "TechChallengeFIAP.Enums": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TechChallengeFIAP.DTOs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TechChallengeFIAP.DTOs.dll": {}
+        }
+      },
+      "TechChallengeFIAP.Enums/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "TechChallengeFiap.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TechChallengeFIAP.Enums.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TechChallengeFIAP.Enums.dll": {}
         }
       },
       "TechChallengeFiap.Integrations/1.0.0": {
@@ -1276,6 +1303,7 @@
           "Microsoft.Extensions.Configuration.Json": "8.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.1",
           "Newtonsoft.Json": "13.0.3",
+          "TechChallengeFIAP.Enums": "1.0.0",
           "mercadopago-sdk": "2.3.8"
         },
         "compile": {
@@ -3436,6 +3464,16 @@
       "path": "../TechChallengeFIAP.Domain/TechChallengeFIAP.Domain.csproj",
       "msbuildProject": "../TechChallengeFIAP.Domain/TechChallengeFIAP.Domain.csproj"
     },
+    "TechChallengeFIAP.DTOs/1.0.0": {
+      "type": "project",
+      "path": "../TechChallengeFIAP.DTOs/TechChallengeFIAP.DTOs.csproj",
+      "msbuildProject": "../TechChallengeFIAP.DTOs/TechChallengeFIAP.DTOs.csproj"
+    },
+    "TechChallengeFIAP.Enums/1.0.0": {
+      "type": "project",
+      "path": "../TechChallengeFIAP.Enums/TechChallengeFIAP.Enums.csproj",
+      "msbuildProject": "../TechChallengeFIAP.Enums/TechChallengeFIAP.Enums.csproj"
+    },
     "TechChallengeFiap.Integrations/1.0.0": {
       "type": "project",
       "path": "../TechChallengeFiap.Integrations/TechChallengeFiap.Integrations.csproj",
@@ -3446,6 +3484,7 @@
     "net8.0": [
       "Microsoft.EntityFrameworkCore >= 8.0.4",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.4",
+      "TechChallengeFIAP.DTOs >= 1.0.0",
       "TechChallengeFIAP.Domain >= 1.0.0",
       "TechChallengeFiap.Core >= 1.0.0"
     ]
@@ -3490,6 +3529,9 @@
             },
             "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Domain\\TechChallengeFIAP.Domain.csproj": {
               "projectPath": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.Domain\\TechChallengeFIAP.Domain.csproj"
+            },
+            "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.DTOs\\TechChallengeFIAP.DTOs.csproj": {
+              "projectPath": "C:\\_GTI_FIAP\\Tech-Challenge-Fiap\\TechChallengeFIAP.DTOs\\TechChallengeFIAP.DTOs.csproj"
             }
           }
         }
@@ -3534,7 +3576,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

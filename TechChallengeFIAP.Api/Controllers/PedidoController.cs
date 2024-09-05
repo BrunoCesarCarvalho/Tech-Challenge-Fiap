@@ -1,13 +1,15 @@
-﻿using MercadoPago.Resource.Customer;
+﻿using AutoMapper;
+using MercadoPago.Resource.Customer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using TechChallengeFIAP.Core.AbstractServices;
 using TechChallengeFIAP.Core.ConcretServices;
 using TechChallengeFIAP.Core.Helpers;
 using TechChallengeFIAP.Core.Paginetes;
-using TechChallengeFIAP.Domain.DTOs;
-using TechChallengeFIAP.Domain.Enums;
-using TechChallengeFIAP.Domain.Interfaces.Services;
+using TechChallengeFIAP.Domain.InterfacesUserCases.Services;
+using TechChallengeFIAP.DTOs;
+using TechChallengeFIAP.Enums;
+using TechChallengeFIAP.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -17,13 +19,17 @@ namespace TechChallengeFIAP.Api.Controllers
     [ApiController]
     public class PedidoController : ControllerBase
     {
-        private readonly IPedidoService _pedidoService;
+
+        private readonly IMapper _mapper;
+
+        private readonly IPedidoUserCase _pedidoUserCase;
         private readonly IUriService uriService;
 
-        public PedidoController(IPedidoService pedidoService, IUriService uriService)
+        public PedidoController(IPedidoUserCase pedidoUserCase, IUriService uriService, IMapper mapper)
         {
-            _pedidoService = pedidoService;
+            _pedidoUserCase = pedidoUserCase;
             this.uriService = uriService;
+            _mapper = mapper;
         }
 
         /// <summary>
@@ -34,7 +40,7 @@ namespace TechChallengeFIAP.Api.Controllers
         public async Task<IActionResult> GetAll([FromQuery] PaginationFilter filter)
         {
             var route = Request.Path.Value;
-            var dados = await _pedidoService.GetAllAsync(filter);
+            var dados = await _pedidoUserCase.GetAllAsync(filter);
             var pagedReponse = PaginationHelper.CreatePagedReponse<PedidoDTO>(dados.Data, filter, dados.TotalRecords, uriService, route);
             return Ok(pagedReponse);
         }
@@ -49,7 +55,7 @@ namespace TechChallengeFIAP.Api.Controllers
         public async Task<IActionResult> GetPedidoActive([FromQuery] PaginationFilter filter)
         {
             var route = Request.Path.Value;
-            var dados = await _pedidoService.PedidosActive(filter);
+            var dados = await _pedidoUserCase.PedidosActive(filter);
             var pagedReponse = PaginationHelper.CreatePagedReponse<PedidoDTO>(dados.Data, filter, dados.TotalRecords, uriService, route);
             return Ok(pagedReponse);
         }
@@ -60,9 +66,10 @@ namespace TechChallengeFIAP.Api.Controllers
         /// </summary>
         /// <returns>Retorno o ID do pedido criado.</returns>
         [HttpPost]
-        public async Task<IActionResult> CreateAsync([FromBody] CreatePedidoDTO createPedidoDTO)
+        public async Task<IActionResult> CreateAsync([FromBody] CreatePedidoModel createPedidoModel)
         {
-            var idPedido = await _pedidoService.CreatePedidoAsync(createPedidoDTO);
+            var createPedidoDTO = _mapper.Map<CreatePedidoDTO>(createPedidoModel);
+            var idPedido = await _pedidoUserCase.CreatePedidoAsync(createPedidoDTO);
             return StatusCode(StatusCodes.Status201Created, idPedido);
         }
 
@@ -72,7 +79,7 @@ namespace TechChallengeFIAP.Api.Controllers
         [HttpPut("change-status/{id}/{enumPedidoStatusEtapa}")]
         public async Task<IActionResult> ChangeStatusAsync([FromRoute] int id, [FromRoute] EnumPedidoStatusEtapa enumPedidoStatusEtapa)
         {
-            await _pedidoService.ChangeStatusAsync(id, (int)enumPedidoStatusEtapa);
+            await _pedidoUserCase.ChangeStatusAsync(id, (int)enumPedidoStatusEtapa);
             return StatusCode(StatusCodes.Status204NoContent);
         }
 
@@ -83,7 +90,7 @@ namespace TechChallengeFIAP.Api.Controllers
         [HttpGet("qr-code/{id}")]
         public async Task<IActionResult> GetQrCodeAsync([FromRoute] int id)
         {
-            var image = await _pedidoService.GetQrCodeAsync(id);
+            var image = await _pedidoUserCase.GetQrCodeAsync(id);
             return File(image, "image/jpeg");
         }
 
@@ -93,7 +100,7 @@ namespace TechChallengeFIAP.Api.Controllers
         [HttpPut("confirm-payment/{Id}")]
         public async Task<IActionResult> ConfirmePaymentAsync([FromRoute] int Id)
         {
-            await _pedidoService.ConfirmPaymentAsync(Id);
+            await _pedidoUserCase.ConfirmPaymentAsync(Id);
             return StatusCode(StatusCodes.Status204NoContent);
         }
 
@@ -103,7 +110,7 @@ namespace TechChallengeFIAP.Api.Controllers
         [HttpPut("confirm-payment/mercado-pago/{IdPedidoMercadoPago}")]
         public async Task<IActionResult> ConfirmePaymentMercadoPagoAsync([FromRoute] string IdPedidoMercadoPago)
         {
-            await _pedidoService.ConfirmePaymentMercadoPagoAsync(IdPedidoMercadoPago);
+            await _pedidoUserCase.ConfirmePaymentMercadoPagoAsync(IdPedidoMercadoPago);
             return StatusCode(StatusCodes.Status204NoContent);
         }
     }
