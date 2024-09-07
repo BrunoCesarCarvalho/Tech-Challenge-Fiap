@@ -23,7 +23,7 @@ jobs:
           dotnet-version: "8.x"
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore ./TechChallengeFIAP.sln
 
       - name: Build the project
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build ./TechChallengeFIAP.sln --configuration Release --no-restore
