@@ -20,6 +20,8 @@ builder.Logging.AddDebug();
 
 builder.Services.AddControllers();
 
+builder.Services.AddHealthChecks();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -47,7 +49,7 @@ builder.Services.AddSwaggerGen(c =>
         }
     });
 
-    // Configurar para usar os comentários XML
+    // Configurar para usar os comentï¿½rios XML
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
     c.IncludeXmlComments(xmlPath);
@@ -61,6 +63,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapHealthChecks("/health");
 
 app.UseSwagger();
 app.UseSwaggerUI(c =>
